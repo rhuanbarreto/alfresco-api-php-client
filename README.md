@@ -101,6 +101,7 @@ try {
 ## Documentation for API Endpoints
 
 All CORE API URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
+
 All Search API URIs are relative to *https://localhost/alfresco/api/-default-/public/search/versions/1*
 
 Class | Method | HTTP request | Description
