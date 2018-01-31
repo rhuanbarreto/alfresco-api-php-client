@@ -54,6 +54,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
 Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setHost('http://[YOUR_ALFRESCO_HOSTNAME]:[YOUR_ALFRESCO_PORT]/alfresco/api/-default-/public/alfresco/versions/1');
 
 $api_instance = new Alfresco\Api\ActivitiesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
@@ -84,9 +85,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
 Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setHost('http://[YOUR_ALFRESCO_HOSTNAME]:[YOUR_ALFRESCO_PORT]/alfresco/api/-default-/public/search/versions/1');
 
 $api_instance = new Alfresco\Api\SearchApi();
 $query_body = new \Alfresco\Model\SearchRequest(); // \Alfresco\Model\SearchRequest | Generic query API
+$query_body->setQuery(["query" => "foo"]);
 
 try {
     $result = $api_instance->search($query_body);
