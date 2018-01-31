@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * DownloadsApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class DownloadsApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class DownloadsApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class DownloadsApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return DownloadsApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,7 +93,7 @@ class DownloadsApi
      * Cancel a download
      *
      * @param string $download_id The identifier of a download node. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function cancelDownload($download_id)
@@ -108,7 +108,7 @@ class DownloadsApi
      * Cancel a download
      *
      * @param string $download_id The identifier of a download node. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelDownloadWithHttpInfo($download_id)
@@ -164,7 +164,7 @@ class DownloadsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -178,10 +178,10 @@ class DownloadsApi
      *
      * Create a new download
      *
-     * @param \Alfresco\Core\Model\DownloadBodyCreate $download_body_create The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. (required)
+     * @param \Alfresco\Model\DownloadBodyCreate $download_body_create The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\DownloadEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\DownloadEntry
      */
     public function createDownload($download_body_create, $fields = null)
     {
@@ -194,10 +194,10 @@ class DownloadsApi
      *
      * Create a new download
      *
-     * @param \Alfresco\Core\Model\DownloadBodyCreate $download_body_create The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. (required)
+     * @param \Alfresco\Model\DownloadBodyCreate $download_body_create The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\DownloadEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\DownloadEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDownloadWithHttpInfo($download_body_create, $fields = null)
     {
@@ -248,19 +248,19 @@ class DownloadsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\DownloadEntry',
+                '\Alfresco\Model\DownloadEntry',
                 '/downloads'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\DownloadEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\DownloadEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\DownloadEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\DownloadEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -276,8 +276,8 @@ class DownloadsApi
      *
      * @param string $download_id The identifier of a download node. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\DownloadEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\DownloadEntry
      */
     public function getDownload($download_id, $fields = null)
     {
@@ -292,8 +292,8 @@ class DownloadsApi
      *
      * @param string $download_id The identifier of a download node. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\DownloadEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\DownloadEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDownloadWithHttpInfo($download_id, $fields = null)
     {
@@ -347,19 +347,19 @@ class DownloadsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\DownloadEntry',
+                '\Alfresco\Model\DownloadEntry',
                 '/downloads/{downloadId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\DownloadEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\DownloadEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\DownloadEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\DownloadEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

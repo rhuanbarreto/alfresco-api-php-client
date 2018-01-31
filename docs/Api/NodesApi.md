@@ -1,4 +1,4 @@
-# Alfresco\Core\NodesApi
+# Alfresco\NodesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **copyNode**
-> \Alfresco\Core\Model\NodeEntry copyNode($node_id, $node_body_copy, $include, $fields)
+> \Alfresco\Model\NodeEntry copyNode($node_id, $node_body_copy, $include, $fields)
 
 Copy a node
 
@@ -38,12 +38,12 @@ Copy a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$node_body_copy = new \Alfresco\Core\Model\NodeBodyCopy(); // \Alfresco\Core\Model\NodeBodyCopy | The targetParentId and, optionally, a new name which should include the file extension.
+$node_body_copy = new \Alfresco\Model\NodeBodyCopy(); // \Alfresco\Model\NodeBodyCopy | The targetParentId and, optionally, a new name which should include the file extension.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -61,13 +61,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **node_body_copy** | [**\Alfresco\Core\Model\NodeBodyCopy**](../Model/NodeBodyCopy.md)| The targetParentId and, optionally, a new name which should include the file extension. |
+ **node_body_copy** | [**\Alfresco\Model\NodeBodyCopy**](../Model/NodeBodyCopy.md)| The targetParentId and, optionally, a new name which should include the file extension. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAssocation**
-> \Alfresco\Core\Model\AssociationEntry createAssocation($node_id, $association_body_create, $fields)
+> \Alfresco\Model\AssociationEntry createAssocation($node_id, $association_body_create, $fields)
 
 Create node association
 
@@ -93,12 +93,12 @@ Create node association
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a source node.
-$association_body_create = new \Alfresco\Core\Model\AssociationBody(); // \Alfresco\Core\Model\AssociationBody | The target node id and assoc type.
+$association_body_create = new \Alfresco\Model\AssociationBody(); // \Alfresco\Model\AssociationBody | The target node id and assoc type.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -115,12 +115,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a source node. |
- **association_body_create** | [**\Alfresco\Core\Model\AssociationBody**](../Model/AssociationBody.md)| The target node id and assoc type. |
+ **association_body_create** | [**\Alfresco\Model\AssociationBody**](../Model/AssociationBody.md)| The target node id and assoc type. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\AssociationEntry**](../Model/AssociationEntry.md)
+[**\Alfresco\Model\AssociationEntry**](../Model/AssociationEntry.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNode**
-> \Alfresco\Core\Model\NodeEntry createNode($node_id, $node_body_create, $auto_rename, $include, $fields)
+> \Alfresco\Model\NodeEntry createNode($node_id, $node_body_create, $auto_rename, $include, $fields)
 
 Create a node
 
@@ -146,12 +146,12 @@ Create a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root-
-$node_body_create = new \Alfresco\Core\Model\NodeBodyCreate(); // \Alfresco\Core\Model\NodeBodyCreate | The node information to create.
+$node_body_create = new \Alfresco\Model\NodeBodyCreate(); // \Alfresco\Model\NodeBodyCreate | The node information to create.
 $auto_rename = true; // bool | If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -170,14 +170,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- |
- **node_body_create** | [**\Alfresco\Core\Model\NodeBodyCreate**](../Model/NodeBodyCreate.md)| The node information to create. |
+ **node_body_create** | [**\Alfresco\Model\NodeBodyCreate**](../Model/NodeBodyCreate.md)| The node information to create. |
  **auto_rename** | **bool**| If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. | [optional]
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSecondaryChildAssocation**
-> \Alfresco\Core\Model\ChildAssociationEntry createSecondaryChildAssocation($node_id, $secondary_child_association_body_create, $fields)
+> \Alfresco\Model\ChildAssociationEntry createSecondaryChildAssocation($node_id, $secondary_child_association_body_create, $fields)
 
 Create secondary child
 
@@ -203,12 +203,12 @@ Create secondary child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a parent node.
-$secondary_child_association_body_create = new \Alfresco\Core\Model\ChildAssociationBody(); // \Alfresco\Core\Model\ChildAssociationBody | The child node id and assoc type.
+$secondary_child_association_body_create = new \Alfresco\Model\ChildAssociationBody(); // \Alfresco\Model\ChildAssociationBody | The child node id and assoc type.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -225,12 +225,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a parent node. |
- **secondary_child_association_body_create** | [**\Alfresco\Core\Model\ChildAssociationBody**](../Model/ChildAssociationBody.md)| The child node id and assoc type. |
+ **secondary_child_association_body_create** | [**\Alfresco\Model\ChildAssociationBody**](../Model/ChildAssociationBody.md)| The child node id and assoc type. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\ChildAssociationEntry**](../Model/ChildAssociationEntry.md)
+[**\Alfresco\Model\ChildAssociationEntry**](../Model/ChildAssociationEntry.md)
 
 ### Authorization
 
@@ -256,10 +256,10 @@ Delete node association(s)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a source node.
 $target_id = "target_id_example"; // string | The identifier of a target node.
 $assoc_type = "assoc_type_example"; // string | Only delete associations of this type.
@@ -308,10 +308,10 @@ Delete a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $permanent = false; // bool | If **true** then the node is deleted permanently, without moving to the trashcan. Only the owner of the node or an admin can permanently delete the node.
 
@@ -358,10 +358,10 @@ Delete secondary child or children
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a parent node.
 $child_id = "child_id_example"; // string | The identifier of a child node.
 $assoc_type = "assoc_type_example"; // string | Only delete associations of this type.
@@ -398,7 +398,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNode**
-> \Alfresco\Core\Model\NodeEntry getNode($node_id, $include, $relative_path, $fields)
+> \Alfresco\Model\NodeEntry getNode($node_id, $include, $relative_path, $fields)
 
 Get a node
 
@@ -410,10 +410,10 @@ Get a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root-
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $relative_path = "relative_path_example"; // string | A path relative to the **nodeId**. If you set this,  information is returned on the node resolved by this path.
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -465,10 +465,10 @@ Get node content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
 $if_modified_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`.
@@ -505,7 +505,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listNodeChildren**
-> \Alfresco\Core\Model\NodeChildAssociationPaging listNodeChildren($node_id, $skip_count, $max_items, $order_by, $where, $include, $relative_path, $include_source, $fields)
+> \Alfresco\Model\NodeChildAssociationPaging listNodeChildren($node_id, $skip_count, $max_items, $order_by, $where, $include, $relative_path, $include_source, $fields)
 
 List node children
 
@@ -517,10 +517,10 @@ List node children
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root-
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeChildAssociationPaging**](../Model/NodeChildAssociationPaging.md)
+[**\Alfresco\Model\NodeChildAssociationPaging**](../Model/NodeChildAssociationPaging.md)
 
 ### Authorization
 
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listParents**
-> \Alfresco\Core\Model\NodeAssociationPaging listParents($node_id, $where, $include, $skip_count, $max_items, $include_source, $fields)
+> \Alfresco\Model\NodeAssociationPaging listParents($node_id, $where, $include, $skip_count, $max_items, $include_source, $fields)
 
 List parents
 
@@ -582,10 +582,10 @@ List parents
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a child node. You can also use one of these well-known aliases: * -my- * -shared- * -root-
 $where = "where_example"; // string | Optionally filter the list by **assocType** and/or **isPrimary**. Here are some example filters:  *   ```where=(assocType='my:specialAssocType')```  *   ```where=(isPrimary=true)```  *   ```where=(isPrimary=false and assocType='my:specialAssocType')```
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
+[**\Alfresco\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
 
 ### Authorization
 
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSecondaryChildren**
-> \Alfresco\Core\Model\NodeChildAssociationPaging listSecondaryChildren($node_id, $where, $include, $skip_count, $max_items, $include_source, $fields)
+> \Alfresco\Model\NodeChildAssociationPaging listSecondaryChildren($node_id, $where, $include, $skip_count, $max_items, $include_source, $fields)
 
 List secondary children
 
@@ -643,10 +643,10 @@ List secondary children
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a parent node. You can also use one of these well-known aliases: * -my- * -shared- * -root-
 $where = "where_example"; // string | Optionally filter the list by assocType. Here's an example:  *   ```where=(assocType='my:specialAssocType')```
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeChildAssociationPaging**](../Model/NodeChildAssociationPaging.md)
+[**\Alfresco\Model\NodeChildAssociationPaging**](../Model/NodeChildAssociationPaging.md)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSourceAssociations**
-> \Alfresco\Core\Model\NodeAssociationPaging listSourceAssociations($node_id, $where, $include, $fields)
+> \Alfresco\Model\NodeAssociationPaging listSourceAssociations($node_id, $where, $include, $fields)
 
 List source associations
 
@@ -704,10 +704,10 @@ List source associations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a target node.
 $where = "where_example"; // string | Optionally filter the list by **assocType**. Here's an example:  *   ```where=(assocType='my:specialAssocType')```
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
+[**\Alfresco\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
 
 ### Authorization
 
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTargetAssociations**
-> \Alfresco\Core\Model\NodeAssociationPaging listTargetAssociations($node_id, $where, $include, $fields)
+> \Alfresco\Model\NodeAssociationPaging listTargetAssociations($node_id, $where, $include, $fields)
 
 List target associations
 
@@ -759,10 +759,10 @@ List target associations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a source node.
 $where = "where_example"; // string | Optionally filter the list by **assocType**. Here's an example:  *   ```where=(assocType='my:specialAssocType')```
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties
@@ -788,7 +788,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
+[**\Alfresco\Model\NodeAssociationPaging**](../Model/NodeAssociationPaging.md)
 
 ### Authorization
 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lockNode**
-> \Alfresco\Core\Model\NodeEntry lockNode($node_id, $node_body_lock, $include, $fields)
+> \Alfresco\Model\NodeEntry lockNode($node_id, $node_body_lock, $include, $fields)
 
 Lock a node
 
@@ -814,12 +814,12 @@ Lock a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$node_body_lock = new \Alfresco\Core\Model\NodeBodyLock(); // \Alfresco\Core\Model\NodeBodyLock | Lock details.
+$node_body_lock = new \Alfresco\Model\NodeBodyLock(); // \Alfresco\Model\NodeBodyLock | Lock details.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -837,13 +837,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **node_body_lock** | [**\Alfresco\Core\Model\NodeBodyLock**](../Model/NodeBodyLock.md)| Lock details. |
+ **node_body_lock** | [**\Alfresco\Model\NodeBodyLock**](../Model/NodeBodyLock.md)| Lock details. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **moveNode**
-> \Alfresco\Core\Model\NodeEntry moveNode($node_id, $node_body_move, $include, $fields)
+> \Alfresco\Model\NodeEntry moveNode($node_id, $node_body_move, $include, $fields)
 
 Move a node
 
@@ -869,12 +869,12 @@ Move a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$node_body_move = new \Alfresco\Core\Model\NodeBodyMove(); // \Alfresco\Core\Model\NodeBodyMove | The targetParentId and, optionally, a new name which should include the file extension.
+$node_body_move = new \Alfresco\Model\NodeBodyMove(); // \Alfresco\Model\NodeBodyMove | The targetParentId and, optionally, a new name which should include the file extension.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -892,13 +892,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **node_body_move** | [**\Alfresco\Core\Model\NodeBodyMove**](../Model/NodeBodyMove.md)| The targetParentId and, optionally, a new name which should include the file extension. |
+ **node_body_move** | [**\Alfresco\Model\NodeBodyMove**](../Model/NodeBodyMove.md)| The targetParentId and, optionally, a new name which should include the file extension. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -912,7 +912,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **unlockNode**
-> \Alfresco\Core\Model\NodeEntry unlockNode($node_id, $include, $fields)
+> \Alfresco\Model\NodeEntry unlockNode($node_id, $include, $fields)
 
 Unlock a node
 
@@ -924,10 +924,10 @@ Unlock a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNode**
-> \Alfresco\Core\Model\NodeEntry updateNode($node_id, $node_body_update, $include, $fields)
+> \Alfresco\Model\NodeEntry updateNode($node_id, $node_body_update, $include, $fields)
 
 Update a node
 
@@ -977,12 +977,12 @@ Update a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$node_body_update = new \Alfresco\Core\Model\NodeBodyUpdate(); // \Alfresco\Core\Model\NodeBodyUpdate | The node information to update.
+$node_body_update = new \Alfresco\Model\NodeBodyUpdate(); // \Alfresco\Model\NodeBodyUpdate | The node information to update.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -1000,13 +1000,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **node_body_update** | [**\Alfresco\Core\Model\NodeBodyUpdate**](../Model/NodeBodyUpdate.md)| The node information to update. |
+ **node_body_update** | [**\Alfresco\Model\NodeBodyUpdate**](../Model/NodeBodyUpdate.md)| The node information to update. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNodeContent**
-> \Alfresco\Core\Model\NodeEntry updateNodeContent($node_id, $content_body_update, $major_version, $comment, $name, $include, $fields)
+> \Alfresco\Model\NodeEntry updateNodeContent($node_id, $content_body_update, $major_version, $comment, $name, $include, $fields)
 
 Update node content
 
@@ -1032,10 +1032,10 @@ Update node content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NodesApi();
+$api_instance = new Alfresco\Api\NodesApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $content_body_update = "B"; // string | The binary content
 $major_version = false; // bool | If **true**, create a major version. Setting this parameter also enables versioning of this node, if it is not already versioned.
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 

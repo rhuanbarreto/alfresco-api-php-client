@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * FavoritesApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class FavoritesApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class FavoritesApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class FavoritesApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return FavoritesApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,11 +93,11 @@ class FavoritesApi
      * Create a favorite
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\FavoriteBodyCreate $favorite_body_create An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; (required)
+     * @param \Alfresco\Model\FavoriteBodyCreate $favorite_body_create An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; (required)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\FavoriteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\FavoriteEntry
      */
     public function createFavorite($person_id, $favorite_body_create, $include = null, $fields = null)
     {
@@ -111,11 +111,11 @@ class FavoritesApi
      * Create a favorite
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\FavoriteBodyCreate $favorite_body_create An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; (required)
+     * @param \Alfresco\Model\FavoriteBodyCreate $favorite_body_create An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; (required)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\FavoriteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\FavoriteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFavoriteWithHttpInfo($person_id, $favorite_body_create, $include = null, $fields = null)
     {
@@ -185,19 +185,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\FavoriteEntry',
+                '\Alfresco\Model\FavoriteEntry',
                 '/people/{personId}/favorites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\FavoriteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\FavoriteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\FavoriteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\FavoriteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -212,10 +212,10 @@ class FavoritesApi
      * Create a site favorite
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\FavoriteSiteBodyCreate $favorite_site_body_create The id of the site to favorite. (required)
+     * @param \Alfresco\Model\FavoriteSiteBodyCreate $favorite_site_body_create The id of the site to favorite. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\FavoriteSiteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\FavoriteSiteEntry
      */
     public function createSiteFavorite($person_id, $favorite_site_body_create, $fields = null)
     {
@@ -229,10 +229,10 @@ class FavoritesApi
      * Create a site favorite
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\FavoriteSiteBodyCreate $favorite_site_body_create The id of the site to favorite. (required)
+     * @param \Alfresco\Model\FavoriteSiteBodyCreate $favorite_site_body_create The id of the site to favorite. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\FavoriteSiteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\FavoriteSiteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSiteFavoriteWithHttpInfo($person_id, $favorite_site_body_create, $fields = null)
     {
@@ -295,19 +295,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\FavoriteSiteEntry',
+                '\Alfresco\Model\FavoriteSiteEntry',
                 '/people/{personId}/favorite-sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\FavoriteSiteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\FavoriteSiteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\FavoriteSiteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\FavoriteSiteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -323,7 +323,7 @@ class FavoritesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $favorite_id The identifier of a favorite. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteFavorite($person_id, $favorite_id)
@@ -339,7 +339,7 @@ class FavoritesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $favorite_id The identifier of a favorite. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFavoriteWithHttpInfo($person_id, $favorite_id)
@@ -407,7 +407,7 @@ class FavoritesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,7 +423,7 @@ class FavoritesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSiteFavorite($person_id, $site_id)
@@ -439,7 +439,7 @@ class FavoritesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSiteFavoriteWithHttpInfo($person_id, $site_id)
@@ -507,7 +507,7 @@ class FavoritesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -525,8 +525,8 @@ class FavoritesApi
      * @param string $favorite_id The identifier of a favorite. (required)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\FavoriteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\FavoriteEntry
      */
     public function getFavorite($person_id, $favorite_id, $include = null, $fields = null)
     {
@@ -543,8 +543,8 @@ class FavoritesApi
      * @param string $favorite_id The identifier of a favorite. (required)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\FavoriteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\FavoriteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFavoriteWithHttpInfo($person_id, $favorite_id, $include = null, $fields = null)
     {
@@ -617,19 +617,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\FavoriteEntry',
+                '\Alfresco\Model\FavoriteEntry',
                 '/people/{personId}/favorites/{favoriteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\FavoriteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\FavoriteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\FavoriteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\FavoriteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -646,8 +646,8 @@ class FavoritesApi
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteEntry
      */
     public function getFavoriteSite($person_id, $site_id, $fields = null)
     {
@@ -663,8 +663,8 @@ class FavoritesApi
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFavoriteSiteWithHttpInfo($person_id, $site_id, $fields = null)
     {
@@ -730,19 +730,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteEntry',
+                '\Alfresco\Model\SiteEntry',
                 '/people/{personId}/favorite-sites/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -760,8 +760,8 @@ class FavoritesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SitePaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SitePaging
      */
     public function listFavoriteSitesForPerson($person_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -778,8 +778,8 @@ class FavoritesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SitePaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SitePaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listFavoriteSitesForPersonWithHttpInfo($person_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -849,19 +849,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SitePaging',
+                '\Alfresco\Model\SitePaging',
                 '/people/{personId}/favorite-sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SitePaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SitePaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SitePaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SitePaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -881,8 +881,8 @@ class FavoritesApi
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\FavoritePaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\FavoritePaging
      */
     public function listFavorites($person_id, $skip_count = '0', $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -901,8 +901,8 @@ class FavoritesApi
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $include Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\FavoritePaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\FavoritePaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listFavoritesWithHttpInfo($person_id, $skip_count = '0', $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -983,19 +983,19 @@ class FavoritesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\FavoritePaging',
+                '\Alfresco\Model\FavoritePaging',
                 '/people/{personId}/favorites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\FavoritePaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\FavoritePaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\FavoritePaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\FavoritePaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

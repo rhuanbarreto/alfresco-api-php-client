@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * AuditApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class AuditApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class AuditApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class AuditApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return AuditApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -94,7 +94,7 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $where Audit entries to permanently delete for an audit application, given an inclusive time period or range of ids. For example:  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60; *   &#x60;&#x60;&#x60;where&#x3D;(id BETWEEN (&#39;1234&#39;, &#39;4321&#39;)&#x60;&#x60;&#x60; (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteAuditEntriesForAuditApp($audit_application_id, $where)
@@ -110,7 +110,7 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $where Audit entries to permanently delete for an audit application, given an inclusive time period or range of ids. For example:  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60; *   &#x60;&#x60;&#x60;where&#x3D;(id BETWEEN (&#39;1234&#39;, &#39;4321&#39;)&#x60;&#x60;&#x60; (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAuditEntriesForAuditAppWithHttpInfo($audit_application_id, $where)
@@ -174,7 +174,7 @@ class AuditApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -190,7 +190,7 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $audit_entry_id The identifier of an audit entry. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteAuditEntry($audit_application_id, $audit_entry_id)
@@ -206,7 +206,7 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $audit_entry_id The identifier of an audit entry. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAuditEntryWithHttpInfo($audit_application_id, $audit_entry_id)
@@ -274,7 +274,7 @@ class AuditApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -290,8 +290,8 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditApp
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditApp
      */
     public function getAuditApp($audit_application_id, $fields = null)
     {
@@ -306,8 +306,8 @@ class AuditApi
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditApp, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditApp, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAuditAppWithHttpInfo($audit_application_id, $fields = null)
     {
@@ -361,19 +361,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditApp',
+                '\Alfresco\Model\AuditApp',
                 '/audit-applications/{auditApplicationId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditApp', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditApp', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditApp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditApp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -390,8 +390,8 @@ class AuditApi
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $audit_entry_id The identifier of an audit entry. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditEntryEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditEntryEntry
      */
     public function getAuditEntry($audit_application_id, $audit_entry_id, $fields = null)
     {
@@ -407,8 +407,8 @@ class AuditApi
      * @param string $audit_application_id The identifier of an audit application. (required)
      * @param string $audit_entry_id The identifier of an audit entry. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditEntryEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditEntryEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAuditEntryWithHttpInfo($audit_application_id, $audit_entry_id, $fields = null)
     {
@@ -474,19 +474,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditEntryEntry',
+                '\Alfresco\Model\AuditEntryEntry',
                 '/audit-applications/{auditApplicationId}/audit-entries/{auditEntryId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditEntryEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditEntryEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditEntryEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditEntryEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -503,8 +503,8 @@ class AuditApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditAppPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditAppPaging
      */
     public function listAuditApps($skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -520,8 +520,8 @@ class AuditApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditAppPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditAppPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAuditAppsWithHttpInfo($skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -579,19 +579,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditAppPaging',
+                '\Alfresco\Model\AuditAppPaging',
                 '/audit-applications'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditAppPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditAppPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditAppPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditAppPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -612,8 +612,8 @@ class AuditApi
      * @param string $where Optionally filter the list. Here are some examples:  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(id BETWEEN (&#39;1234&#39;, &#39;4321&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39; and createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(valuesKey&#x3D;&#39;/alfresco-access/login/user&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(valuesKey&#x3D;&#39;/alfresco-access/transaction/action&#39; and valuesValue&#x3D;&#39;DELETE&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the audit entry. The following optional fields can be requested: * values (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditEntryPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditEntryPaging
      */
     public function listAuditEntriesForAuditApp($audit_application_id, $skip_count = '0', $order_by = null, $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -633,8 +633,8 @@ class AuditApi
      * @param string $where Optionally filter the list. Here are some examples:  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(id BETWEEN (&#39;1234&#39;, &#39;4321&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39; and createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(valuesKey&#x3D;&#39;/alfresco-access/login/user&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(valuesKey&#x3D;&#39;/alfresco-access/transaction/action&#39; and valuesValue&#x3D;&#39;DELETE&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the audit entry. The following optional fields can be requested: * values (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditEntryPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditEntryPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAuditEntriesForAuditAppWithHttpInfo($audit_application_id, $skip_count = '0', $order_by = null, $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -722,19 +722,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditEntryPaging',
+                '\Alfresco\Model\AuditEntryPaging',
                 '/audit-applications/{auditApplicationId}/audit-entries'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditEntryPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditEntryPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditEntryPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditEntryPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -755,8 +755,8 @@ class AuditApi
      * @param string $where Optionally filter the list. Here are some examples:  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;-me-&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39; and createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the audit entry. The following optional fields can be requested: * values (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditEntryPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditEntryPaging
      */
     public function listAuditEntriesForNode($node_id, $skip_count = '0', $order_by = null, $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -776,8 +776,8 @@ class AuditApi
      * @param string $where Optionally filter the list. Here are some examples:  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;-me-&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(createdByUser&#x3D;&#39;jbloggs&#39; and createdAt BETWEEN (&#39;2017-06-02T12:13:51.593+01:00&#39; , &#39;2017-06-04T10:05:16.536+01:00&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the audit entry. The following optional fields can be requested: * values (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditEntryPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditEntryPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAuditEntriesForNodeWithHttpInfo($node_id, $skip_count = '0', $order_by = null, $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -865,19 +865,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditEntryPaging',
+                '\Alfresco\Model\AuditEntryPaging',
                 '/nodes/{nodeId}/audit-entries'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditEntryPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditEntryPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditEntryPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditEntryPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -892,10 +892,10 @@ class AuditApi
      * Update audit application info
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
-     * @param \Alfresco\Core\Model\AuditBodyUpdate $audit_app_body_update The audit application to update. (required)
+     * @param \Alfresco\Model\AuditBodyUpdate $audit_app_body_update The audit application to update. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AuditApp
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AuditApp
      */
     public function updateAuditApp($audit_application_id, $audit_app_body_update, $fields = null)
     {
@@ -909,10 +909,10 @@ class AuditApi
      * Update audit application info
      *
      * @param string $audit_application_id The identifier of an audit application. (required)
-     * @param \Alfresco\Core\Model\AuditBodyUpdate $audit_app_body_update The audit application to update. (required)
+     * @param \Alfresco\Model\AuditBodyUpdate $audit_app_body_update The audit application to update. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AuditApp, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AuditApp, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAuditAppWithHttpInfo($audit_application_id, $audit_app_body_update, $fields = null)
     {
@@ -975,19 +975,19 @@ class AuditApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AuditApp',
+                '\Alfresco\Model\AuditApp',
                 '/audit-applications/{auditApplicationId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AuditApp', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AuditApp', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AuditApp', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AuditApp', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

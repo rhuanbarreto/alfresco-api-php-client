@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * RenditionsApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class RenditionsApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class RenditionsApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class RenditionsApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return RenditionsApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,8 +93,8 @@ class RenditionsApi
      * Create rendition
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\RenditionBodyCreate $rendition_body_create The rendition \&quot;id\&quot;. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\RenditionBodyCreate $rendition_body_create The rendition \&quot;id\&quot;. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function createRendition($node_id, $rendition_body_create)
@@ -109,8 +109,8 @@ class RenditionsApi
      * Create rendition
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\RenditionBodyCreate $rendition_body_create The rendition \&quot;id\&quot;. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\RenditionBodyCreate $rendition_body_create The rendition \&quot;id\&quot;. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRenditionWithHttpInfo($node_id, $rendition_body_create)
@@ -175,7 +175,7 @@ class RenditionsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -191,8 +191,8 @@ class RenditionsApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\RenditionEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\RenditionEntry
      */
     public function getRendition($node_id, $rendition_id)
     {
@@ -207,8 +207,8 @@ class RenditionsApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\RenditionEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\RenditionEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRenditionWithHttpInfo($node_id, $rendition_id)
     {
@@ -267,19 +267,19 @@ class RenditionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\RenditionEntry',
+                '\Alfresco\Model\RenditionEntry',
                 '/nodes/{nodeId}/renditions/{renditionId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\RenditionEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\RenditionEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\RenditionEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\RenditionEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -298,7 +298,7 @@ class RenditionsApi
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
      * @param bool $placeholder If **true** and there is no rendition for this **nodeId** and **renditionId**,  then the placeholder image for the mime type of this rendition is returned, rather  than a 404 response. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function getRenditionContent($node_id, $rendition_id, $attachment = 'true', $if_modified_since = null, $placeholder = 'false')
@@ -317,7 +317,7 @@ class RenditionsApi
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
      * @param bool $placeholder If **true** and there is no rendition for this **nodeId** and **renditionId**,  then the placeholder image for the mime type of this rendition is returned, rather  than a 404 response. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRenditionContentWithHttpInfo($node_id, $rendition_id, $attachment = 'true', $if_modified_since = null, $placeholder = 'false')
@@ -397,7 +397,7 @@ class RenditionsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -413,8 +413,8 @@ class RenditionsApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\RenditionPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\RenditionPaging
      */
     public function listRenditions($node_id, $where = null)
     {
@@ -429,8 +429,8 @@ class RenditionsApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\RenditionPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\RenditionPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listRenditionsWithHttpInfo($node_id, $where = null)
     {
@@ -481,19 +481,19 @@ class RenditionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\RenditionPaging',
+                '\Alfresco\Model\RenditionPaging',
                 '/nodes/{nodeId}/renditions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\RenditionPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\RenditionPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\RenditionPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\RenditionPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

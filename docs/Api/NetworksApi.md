@@ -1,4 +1,4 @@
-# Alfresco\Core\NetworksApi
+# Alfresco\NetworksApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getNetwork**
-> \Alfresco\Core\Model\PersonNetworkEntry getNetwork($network_id, $fields)
+> \Alfresco\Model\PersonNetworkEntry getNetwork($network_id, $fields)
 
 Get a network
 
@@ -22,10 +22,10 @@ Gets information for a network **networkId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NetworksApi();
+$api_instance = new Alfresco\Api\NetworksApi();
 $network_id = "network_id_example"; // string | The identifier of a network.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonNetworkEntry**](../Model/PersonNetworkEntry.md)
+[**\Alfresco\Model\PersonNetworkEntry**](../Model/PersonNetworkEntry.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNetworkForPerson**
-> \Alfresco\Core\Model\PersonNetworkEntry getNetworkForPerson($person_id, $network_id, $fields)
+> \Alfresco\Model\PersonNetworkEntry getNetworkForPerson($person_id, $network_id, $fields)
 
 Get network information
 
@@ -73,10 +73,10 @@ Gets network information on a single network specified by **networkId** for **pe
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NetworksApi();
+$api_instance = new Alfresco\Api\NetworksApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $network_id = "network_id_example"; // string | The identifier of a network.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonNetworkEntry**](../Model/PersonNetworkEntry.md)
+[**\Alfresco\Model\PersonNetworkEntry**](../Model/PersonNetworkEntry.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listNetworksForPerson**
-> \Alfresco\Core\Model\PersonNetworkPaging listNetworksForPerson($person_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\PersonNetworkPaging listNetworksForPerson($person_id, $skip_count, $max_items, $fields)
 
 List network membership
 
@@ -126,10 +126,10 @@ Gets a list of network memberships for person **personId**.  You can use the `-m
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\NetworksApi();
+$api_instance = new Alfresco\Api\NetworksApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonNetworkPaging**](../Model/PersonNetworkPaging.md)
+[**\Alfresco\Model\PersonNetworkPaging**](../Model/PersonNetworkPaging.md)
 
 ### Authorization
 

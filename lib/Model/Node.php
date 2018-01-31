@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Node Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -61,17 +61,17 @@ class Node implements ArrayAccess
         'is_file' => 'bool',
         'is_locked' => 'bool',
         'modified_at' => '\DateTime',
-        'modified_by_user' => '\Alfresco\Core\Model\UserInfo',
+        'modified_by_user' => '\Alfresco\Model\UserInfo',
         'created_at' => '\DateTime',
-        'created_by_user' => '\Alfresco\Core\Model\UserInfo',
+        'created_by_user' => '\Alfresco\Model\UserInfo',
         'parent_id' => 'string',
         'is_link' => 'bool',
-        'content' => '\Alfresco\Core\Model\ContentInfo',
+        'content' => '\Alfresco\Model\ContentInfo',
         'aspect_names' => 'string[]',
         'properties' => 'object',
         'allowable_operations' => 'string[]',
-        'path' => '\Alfresco\Core\Model\PathInfo',
-        'permissions' => '\Alfresco\Core\Model\PermissionsInfo'
+        'path' => '\Alfresco\Model\PathInfo',
+        'permissions' => '\Alfresco\Model\PermissionsInfo'
     ];
 
     /**
@@ -477,7 +477,7 @@ class Node implements ArrayAccess
 
     /**
      * Gets modified_by_user
-     * @return \Alfresco\Core\Model\UserInfo
+     * @return \Alfresco\Model\UserInfo
      */
     public function getModifiedByUser()
     {
@@ -486,7 +486,7 @@ class Node implements ArrayAccess
 
     /**
      * Sets modified_by_user
-     * @param \Alfresco\Core\Model\UserInfo $modified_by_user
+     * @param \Alfresco\Model\UserInfo $modified_by_user
      * @return $this
      */
     public function setModifiedByUser($modified_by_user)
@@ -519,7 +519,7 @@ class Node implements ArrayAccess
 
     /**
      * Gets created_by_user
-     * @return \Alfresco\Core\Model\UserInfo
+     * @return \Alfresco\Model\UserInfo
      */
     public function getCreatedByUser()
     {
@@ -528,7 +528,7 @@ class Node implements ArrayAccess
 
     /**
      * Sets created_by_user
-     * @param \Alfresco\Core\Model\UserInfo $created_by_user
+     * @param \Alfresco\Model\UserInfo $created_by_user
      * @return $this
      */
     public function setCreatedByUser($created_by_user)
@@ -582,7 +582,7 @@ class Node implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Alfresco\Core\Model\ContentInfo
+     * @return \Alfresco\Model\ContentInfo
      */
     public function getContent()
     {
@@ -591,7 +591,7 @@ class Node implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Alfresco\Core\Model\ContentInfo $content
+     * @param \Alfresco\Model\ContentInfo $content
      * @return $this
      */
     public function setContent($content)
@@ -666,7 +666,7 @@ class Node implements ArrayAccess
 
     /**
      * Gets path
-     * @return \Alfresco\Core\Model\PathInfo
+     * @return \Alfresco\Model\PathInfo
      */
     public function getPath()
     {
@@ -675,7 +675,7 @@ class Node implements ArrayAccess
 
     /**
      * Sets path
-     * @param \Alfresco\Core\Model\PathInfo $path
+     * @param \Alfresco\Model\PathInfo $path
      * @return $this
      */
     public function setPath($path)
@@ -687,7 +687,7 @@ class Node implements ArrayAccess
 
     /**
      * Gets permissions
-     * @return \Alfresco\Core\Model\PermissionsInfo
+     * @return \Alfresco\Model\PermissionsInfo
      */
     public function getPermissions()
     {
@@ -696,7 +696,7 @@ class Node implements ArrayAccess
 
     /**
      * Sets permissions
-     * @param \Alfresco\Core\Model\PermissionsInfo $permissions
+     * @param \Alfresco\Model\PermissionsInfo $permissions
      * @return $this
      */
     public function setPermissions($permissions)
@@ -757,10 +757,10 @@ class Node implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

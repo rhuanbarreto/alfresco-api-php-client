@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**aggregate** | [**\Alfresco\Core\Model\RatingAggregate**](RatingAggregate.md) |  | [optional] 
+**aggregate** | [**\Alfresco\Model\RatingAggregate**](RatingAggregate.md) |  | [optional] 
 **rated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **my_rating** | **string** | The rating. The type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar. | [optional] 
 

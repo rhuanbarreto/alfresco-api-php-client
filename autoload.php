@@ -15,10 +15,10 @@
  * An example of a project-specific implementation.
  *
  * After registering this autoload function with SPL, the following line
- * would cause the function to attempt to load the \Alfresco\Core\Baz\Qux class
+ * would cause the function to attempt to load the \Alfresco\Baz\Qux class
  * from /path/to/project/lib/Baz/Qux.php:
  *
- *      new \Alfresco\Core\Baz\Qux;
+ *      new \Alfresco\Baz\Qux;
  *
  * @param string $class The fully-qualified class name.
  *
@@ -27,7 +27,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'Alfresco\\Core\\';
+    $prefix = 'Alfresco\\';
 
     // base directory for the namespace prefix
     $base_dir = __DIR__ . '/lib/';

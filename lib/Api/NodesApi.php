@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * NodesApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class NodesApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class NodesApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class NodesApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return NodesApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,11 +93,11 @@ class NodesApi
      * Copy a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyCopy $node_body_copy The targetParentId and, optionally, a new name which should include the file extension. (required)
+     * @param \Alfresco\Model\NodeBodyCopy $node_body_copy The targetParentId and, optionally, a new name which should include the file extension. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function copyNode($node_id, $node_body_copy, $include = null, $fields = null)
     {
@@ -111,11 +111,11 @@ class NodesApi
      * Copy a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyCopy $node_body_copy The targetParentId and, optionally, a new name which should include the file extension. (required)
+     * @param \Alfresco\Model\NodeBodyCopy $node_body_copy The targetParentId and, optionally, a new name which should include the file extension. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyNodeWithHttpInfo($node_id, $node_body_copy, $include = null, $fields = null)
     {
@@ -185,19 +185,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/copy'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -212,10 +212,10 @@ class NodesApi
      * Create node association
      *
      * @param string $node_id The identifier of a source node. (required)
-     * @param \Alfresco\Core\Model\AssociationBody $association_body_create The target node id and assoc type. (required)
+     * @param \Alfresco\Model\AssociationBody $association_body_create The target node id and assoc type. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\AssociationEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\AssociationEntry
      */
     public function createAssocation($node_id, $association_body_create, $fields = null)
     {
@@ -229,10 +229,10 @@ class NodesApi
      * Create node association
      *
      * @param string $node_id The identifier of a source node. (required)
-     * @param \Alfresco\Core\Model\AssociationBody $association_body_create The target node id and assoc type. (required)
+     * @param \Alfresco\Model\AssociationBody $association_body_create The target node id and assoc type. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\AssociationEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\AssociationEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAssocationWithHttpInfo($node_id, $association_body_create, $fields = null)
     {
@@ -295,19 +295,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\AssociationEntry',
+                '\Alfresco\Model\AssociationEntry',
                 '/nodes/{nodeId}/targets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\AssociationEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\AssociationEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\AssociationEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\AssociationEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -322,12 +322,12 @@ class NodesApi
      * Create a node
      *
      * @param string $node_id The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- (required)
-     * @param \Alfresco\Core\Model\NodeBodyCreate $node_body_create The node information to create. (required)
+     * @param \Alfresco\Model\NodeBodyCreate $node_body_create The node information to create. (required)
      * @param bool $auto_rename If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function createNode($node_id, $node_body_create, $auto_rename = null, $include = null, $fields = null)
     {
@@ -341,12 +341,12 @@ class NodesApi
      * Create a node
      *
      * @param string $node_id The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root- (required)
-     * @param \Alfresco\Core\Model\NodeBodyCreate $node_body_create The node information to create. (required)
+     * @param \Alfresco\Model\NodeBodyCreate $node_body_create The node information to create. (required)
      * @param bool $auto_rename If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNodeWithHttpInfo($node_id, $node_body_create, $auto_rename = null, $include = null, $fields = null)
     {
@@ -420,19 +420,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -447,10 +447,10 @@ class NodesApi
      * Create secondary child
      *
      * @param string $node_id The identifier of a parent node. (required)
-     * @param \Alfresco\Core\Model\ChildAssociationBody $secondary_child_association_body_create The child node id and assoc type. (required)
+     * @param \Alfresco\Model\ChildAssociationBody $secondary_child_association_body_create The child node id and assoc type. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\ChildAssociationEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\ChildAssociationEntry
      */
     public function createSecondaryChildAssocation($node_id, $secondary_child_association_body_create, $fields = null)
     {
@@ -464,10 +464,10 @@ class NodesApi
      * Create secondary child
      *
      * @param string $node_id The identifier of a parent node. (required)
-     * @param \Alfresco\Core\Model\ChildAssociationBody $secondary_child_association_body_create The child node id and assoc type. (required)
+     * @param \Alfresco\Model\ChildAssociationBody $secondary_child_association_body_create The child node id and assoc type. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\ChildAssociationEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\ChildAssociationEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSecondaryChildAssocationWithHttpInfo($node_id, $secondary_child_association_body_create, $fields = null)
     {
@@ -530,19 +530,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\ChildAssociationEntry',
+                '\Alfresco\Model\ChildAssociationEntry',
                 '/nodes/{nodeId}/secondary-children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\ChildAssociationEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\ChildAssociationEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\ChildAssociationEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\ChildAssociationEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -559,7 +559,7 @@ class NodesApi
      * @param string $node_id The identifier of a source node. (required)
      * @param string $target_id The identifier of a target node. (required)
      * @param string $assoc_type Only delete associations of this type. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteAssocation($node_id, $target_id, $assoc_type = null)
@@ -576,7 +576,7 @@ class NodesApi
      * @param string $node_id The identifier of a source node. (required)
      * @param string $target_id The identifier of a target node. (required)
      * @param string $assoc_type Only delete associations of this type. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAssocationWithHttpInfo($node_id, $target_id, $assoc_type = null)
@@ -648,7 +648,7 @@ class NodesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -664,7 +664,7 @@ class NodesApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param bool $permanent If **true** then the node is deleted permanently, without moving to the trashcan. Only the owner of the node or an admin can permanently delete the node. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteNode($node_id, $permanent = 'false')
@@ -680,7 +680,7 @@ class NodesApi
      *
      * @param string $node_id The identifier of a node. (required)
      * @param bool $permanent If **true** then the node is deleted permanently, without moving to the trashcan. Only the owner of the node or an admin can permanently delete the node. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteNodeWithHttpInfo($node_id, $permanent = 'false')
@@ -740,7 +740,7 @@ class NodesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -757,7 +757,7 @@ class NodesApi
      * @param string $node_id The identifier of a parent node. (required)
      * @param string $child_id The identifier of a child node. (required)
      * @param string $assoc_type Only delete associations of this type. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSecondaryChildAssocation($node_id, $child_id, $assoc_type = null)
@@ -774,7 +774,7 @@ class NodesApi
      * @param string $node_id The identifier of a parent node. (required)
      * @param string $child_id The identifier of a child node. (required)
      * @param string $assoc_type Only delete associations of this type. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSecondaryChildAssocationWithHttpInfo($node_id, $child_id, $assoc_type = null)
@@ -846,7 +846,7 @@ class NodesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -864,8 +864,8 @@ class NodesApi
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string $relative_path A path relative to the **nodeId**. If you set this,  information is returned on the node resolved by this path. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function getNode($node_id, $include = null, $relative_path = null, $fields = null)
     {
@@ -882,8 +882,8 @@ class NodesApi
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string $relative_path A path relative to the **nodeId**. If you set this,  information is returned on the node resolved by this path. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeWithHttpInfo($node_id, $include = null, $relative_path = null, $fields = null)
     {
@@ -948,19 +948,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -977,7 +977,7 @@ class NodesApi
      * @param string $node_id The identifier of a node. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function getNodeContent($node_id, $attachment = 'true', $if_modified_since = null)
@@ -994,7 +994,7 @@ class NodesApi
      * @param string $node_id The identifier of a node. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeContentWithHttpInfo($node_id, $attachment = 'true', $if_modified_since = null)
@@ -1058,7 +1058,7 @@ class NodesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1081,8 +1081,8 @@ class NodesApi
      * @param string $relative_path Return information on children in the folder resolved by this path. The path is relative to **nodeId**. (optional)
      * @param bool $include_source Also include **source** in addition to **entries** with folder information on the parent node – either the specified parent **nodeId**, or as resolved by **relativePath**. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeChildAssociationPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeChildAssociationPaging
      */
     public function listNodeChildren($node_id, $skip_count = '0', $max_items = '100', $order_by = null, $where = null, $include = null, $relative_path = null, $include_source = null, $fields = null)
     {
@@ -1104,8 +1104,8 @@ class NodesApi
      * @param string $relative_path Return information on children in the folder resolved by this path. The path is relative to **nodeId**. (optional)
      * @param bool $include_source Also include **source** in addition to **entries** with folder information on the parent node – either the specified parent **nodeId**, or as resolved by **relativePath**. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeChildAssociationPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeChildAssociationPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listNodeChildrenWithHttpInfo($node_id, $skip_count = '0', $max_items = '100', $order_by = null, $where = null, $include = null, $relative_path = null, $include_source = null, $fields = null)
     {
@@ -1201,19 +1201,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeChildAssociationPaging',
+                '\Alfresco\Model\NodeChildAssociationPaging',
                 '/nodes/{nodeId}/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeChildAssociationPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeChildAssociationPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeChildAssociationPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeChildAssociationPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1234,8 +1234,8 @@ class NodesApi
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param bool $include_source Also include **source** (in addition to **entries**) with folder information on **nodeId** (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeAssociationPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeAssociationPaging
      */
     public function listParents($node_id, $where = null, $include = null, $skip_count = '0', $max_items = '100', $include_source = null, $fields = null)
     {
@@ -1255,8 +1255,8 @@ class NodesApi
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param bool $include_source Also include **source** (in addition to **entries**) with folder information on **nodeId** (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listParentsWithHttpInfo($node_id, $where = null, $include = null, $skip_count = '0', $max_items = '100', $include_source = null, $fields = null)
     {
@@ -1341,19 +1341,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeAssociationPaging',
+                '\Alfresco\Model\NodeAssociationPaging',
                 '/nodes/{nodeId}/parents'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeAssociationPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeAssociationPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1374,8 +1374,8 @@ class NodesApi
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param bool $include_source Also include **source** (in addition to **entries**) with folder information on **nodeId** (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeChildAssociationPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeChildAssociationPaging
      */
     public function listSecondaryChildren($node_id, $where = null, $include = null, $skip_count = '0', $max_items = '100', $include_source = null, $fields = null)
     {
@@ -1395,8 +1395,8 @@ class NodesApi
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param bool $include_source Also include **source** (in addition to **entries**) with folder information on **nodeId** (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeChildAssociationPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeChildAssociationPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSecondaryChildrenWithHttpInfo($node_id, $where = null, $include = null, $skip_count = '0', $max_items = '100', $include_source = null, $fields = null)
     {
@@ -1481,19 +1481,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeChildAssociationPaging',
+                '\Alfresco\Model\NodeChildAssociationPaging',
                 '/nodes/{nodeId}/secondary-children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeChildAssociationPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeChildAssociationPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeChildAssociationPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeChildAssociationPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1511,8 +1511,8 @@ class NodesApi
      * @param string $where Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeAssociationPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeAssociationPaging
      */
     public function listSourceAssociations($node_id, $where = null, $include = null, $fields = null)
     {
@@ -1529,8 +1529,8 @@ class NodesApi
      * @param string $where Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSourceAssociationsWithHttpInfo($node_id, $where = null, $include = null, $fields = null)
     {
@@ -1595,19 +1595,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeAssociationPaging',
+                '\Alfresco\Model\NodeAssociationPaging',
                 '/nodes/{nodeId}/sources'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeAssociationPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeAssociationPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1625,8 +1625,8 @@ class NodesApi
      * @param string $where Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeAssociationPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeAssociationPaging
      */
     public function listTargetAssociations($node_id, $where = null, $include = null, $fields = null)
     {
@@ -1643,8 +1643,8 @@ class NodesApi
      * @param string $where Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isLocked * path * properties (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeAssociationPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTargetAssociationsWithHttpInfo($node_id, $where = null, $include = null, $fields = null)
     {
@@ -1709,19 +1709,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeAssociationPaging',
+                '\Alfresco\Model\NodeAssociationPaging',
                 '/nodes/{nodeId}/targets'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeAssociationPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeAssociationPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeAssociationPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1736,11 +1736,11 @@ class NodesApi
      * Lock a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyLock $node_body_lock Lock details. (required)
+     * @param \Alfresco\Model\NodeBodyLock $node_body_lock Lock details. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function lockNode($node_id, $node_body_lock, $include = null, $fields = null)
     {
@@ -1754,11 +1754,11 @@ class NodesApi
      * Lock a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyLock $node_body_lock Lock details. (required)
+     * @param \Alfresco\Model\NodeBodyLock $node_body_lock Lock details. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function lockNodeWithHttpInfo($node_id, $node_body_lock, $include = null, $fields = null)
     {
@@ -1828,19 +1828,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/lock'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1855,11 +1855,11 @@ class NodesApi
      * Move a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyMove $node_body_move The targetParentId and, optionally, a new name which should include the file extension. (required)
+     * @param \Alfresco\Model\NodeBodyMove $node_body_move The targetParentId and, optionally, a new name which should include the file extension. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function moveNode($node_id, $node_body_move, $include = null, $fields = null)
     {
@@ -1873,11 +1873,11 @@ class NodesApi
      * Move a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyMove $node_body_move The targetParentId and, optionally, a new name which should include the file extension. (required)
+     * @param \Alfresco\Model\NodeBodyMove $node_body_move The targetParentId and, optionally, a new name which should include the file extension. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function moveNodeWithHttpInfo($node_id, $node_body_move, $include = null, $fields = null)
     {
@@ -1947,19 +1947,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/move'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1976,8 +1976,8 @@ class NodesApi
      * @param string $node_id The identifier of a node. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function unlockNode($node_id, $include = null, $fields = null)
     {
@@ -1993,8 +1993,8 @@ class NodesApi
      * @param string $node_id The identifier of a node. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function unlockNodeWithHttpInfo($node_id, $include = null, $fields = null)
     {
@@ -2055,19 +2055,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/unlock'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2082,11 +2082,11 @@ class NodesApi
      * Update a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyUpdate $node_body_update The node information to update. (required)
+     * @param \Alfresco\Model\NodeBodyUpdate $node_body_update The node information to update. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function updateNode($node_id, $node_body_update, $include = null, $fields = null)
     {
@@ -2100,11 +2100,11 @@ class NodesApi
      * Update a node
      *
      * @param string $node_id The identifier of a node. (required)
-     * @param \Alfresco\Core\Model\NodeBodyUpdate $node_body_update The node information to update. (required)
+     * @param \Alfresco\Model\NodeBodyUpdate $node_body_update The node information to update. (required)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNodeWithHttpInfo($node_id, $node_body_update, $include = null, $fields = null)
     {
@@ -2174,19 +2174,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2207,8 +2207,8 @@ class NodesApi
      * @param string $name Optional new name. This should include the file extension. The name must not contain spaces or the following special characters: * \&quot; &lt; &gt; \\ / ? : and |.  The character &#x60;.&#x60; must not be used at the end of the name. (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\NodeEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\NodeEntry
      */
     public function updateNodeContent($node_id, $content_body_update, $major_version = 'false', $comment = null, $name = null, $include = null, $fields = null)
     {
@@ -2228,8 +2228,8 @@ class NodesApi
      * @param string $name Optional new name. This should include the file extension. The name must not contain spaces or the following special characters: * \&quot; &lt; &gt; \\ / ? : and |.  The character &#x60;.&#x60; must not be used at the end of the name. (optional)
      * @param string[] $include Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\NodeEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNodeContentWithHttpInfo($node_id, $content_body_update, $major_version = 'false', $comment = null, $name = null, $include = null, $fields = null)
     {
@@ -2315,19 +2315,19 @@ class NodesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\NodeEntry',
+                '\Alfresco\Model\NodeEntry',
                 '/nodes/{nodeId}/content'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\NodeEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\NodeEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\NodeEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

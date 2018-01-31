@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description A person can rate an item of content by liking it. They can also remove their like of an item of content. API methods exist to get a list of ratings and to add a new rating.
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class Rating implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'aggregate' => '\Alfresco\Core\Model\RatingAggregate',
+        'aggregate' => '\Alfresco\Model\RatingAggregate',
         'rated_at' => '\DateTime',
         'my_rating' => 'string'
     ];
@@ -208,7 +208,7 @@ class Rating implements ArrayAccess
 
     /**
      * Gets aggregate
-     * @return \Alfresco\Core\Model\RatingAggregate
+     * @return \Alfresco\Model\RatingAggregate
      */
     public function getAggregate()
     {
@@ -217,7 +217,7 @@ class Rating implements ArrayAccess
 
     /**
      * Sets aggregate
-     * @param \Alfresco\Core\Model\RatingAggregate $aggregate
+     * @param \Alfresco\Model\RatingAggregate $aggregate
      * @return $this
      */
     public function setAggregate($aggregate)
@@ -320,10 +320,10 @@ class Rating implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

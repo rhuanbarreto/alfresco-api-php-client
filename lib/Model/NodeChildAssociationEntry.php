@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * NodeChildAssociationEntry Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class NodeChildAssociationEntry implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entry' => '\Alfresco\Core\Model\NodeChildAssociation'
+        'entry' => '\Alfresco\Model\NodeChildAssociation'
     ];
 
     /**
@@ -168,7 +168,7 @@ class NodeChildAssociationEntry implements ArrayAccess
 
     /**
      * Gets entry
-     * @return \Alfresco\Core\Model\NodeChildAssociation
+     * @return \Alfresco\Model\NodeChildAssociation
      */
     public function getEntry()
     {
@@ -177,7 +177,7 @@ class NodeChildAssociationEntry implements ArrayAccess
 
     /**
      * Sets entry
-     * @param \Alfresco\Core\Model\NodeChildAssociation $entry
+     * @param \Alfresco\Model\NodeChildAssociation $entry
      * @return $this
      */
     public function setEntry($entry)
@@ -238,10 +238,10 @@ class NodeChildAssociationEntry implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

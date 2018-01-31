@@ -1,4 +1,4 @@
-# Alfresco\Core\FavoritesApi
+# Alfresco\FavoritesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createFavorite**
-> \Alfresco\Core\Model\FavoriteEntry createFavorite($person_id, $favorite_body_create, $include, $fields)
+> \Alfresco\Model\FavoriteEntry createFavorite($person_id, $favorite_body_create, $include, $fields)
 
 Create a favorite
 
@@ -27,12 +27,12 @@ Favorite a **site**, **file**, or **folder** in the repository.  You can use the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$favorite_body_create = new \Alfresco\Core\Model\FavoriteBodyCreate(); // \Alfresco\Core\Model\FavoriteBodyCreate | An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name `site`, `file`, or `folder`.  The content of that object is the `guid` of the target entity.  For example, to favorite a file the following body would be used:  ```JSON {    \"target\": {       \"file\": {          \"guid\": \"abcde-01234-....\"       }    } } ```
+$favorite_body_create = new \Alfresco\Model\FavoriteBodyCreate(); // \Alfresco\Model\FavoriteBodyCreate | An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name `site`, `file`, or `folder`.  The content of that object is the `guid` of the target entity.  For example, to favorite a file the following body would be used:  ```JSON {    \"target\": {       \"file\": {          \"guid\": \"abcde-01234-....\"       }    } } ```
 $include = array("include_example"); // string[] | Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders)
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -50,13 +50,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **favorite_body_create** | [**\Alfresco\Core\Model\FavoriteBodyCreate**](../Model/FavoriteBodyCreate.md)| An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; |
+ **favorite_body_create** | [**\Alfresco\Model\FavoriteBodyCreate**](../Model/FavoriteBodyCreate.md)| An object identifying the entity to be favorited.   The object consists of a single property which is an object with the name &#x60;site&#x60;, &#x60;file&#x60;, or &#x60;folder&#x60;.  The content of that object is the &#x60;guid&#x60; of the target entity.  For example, to favorite a file the following body would be used:  &#x60;&#x60;&#x60;JSON {    \&quot;target\&quot;: {       \&quot;file\&quot;: {          \&quot;guid\&quot;: \&quot;abcde-01234-....\&quot;       }    } } &#x60;&#x60;&#x60; |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders) | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\FavoriteEntry**](../Model/FavoriteEntry.md)
+[**\Alfresco\Model\FavoriteEntry**](../Model/FavoriteEntry.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSiteFavorite**
-> \Alfresco\Core\Model\FavoriteSiteEntry createSiteFavorite($person_id, $favorite_site_body_create, $fields)
+> \Alfresco\Model\FavoriteSiteEntry createSiteFavorite($person_id, $favorite_site_body_create, $fields)
 
 Create a site favorite
 
@@ -82,12 +82,12 @@ Create a site favorite
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$favorite_site_body_create = new \Alfresco\Core\Model\FavoriteSiteBodyCreate(); // \Alfresco\Core\Model\FavoriteSiteBodyCreate | The id of the site to favorite.
+$favorite_site_body_create = new \Alfresco\Model\FavoriteSiteBodyCreate(); // \Alfresco\Model\FavoriteSiteBodyCreate | The id of the site to favorite.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -104,12 +104,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **favorite_site_body_create** | [**\Alfresco\Core\Model\FavoriteSiteBodyCreate**](../Model/FavoriteSiteBodyCreate.md)| The id of the site to favorite. |
+ **favorite_site_body_create** | [**\Alfresco\Model\FavoriteSiteBodyCreate**](../Model/FavoriteSiteBodyCreate.md)| The id of the site to favorite. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\FavoriteSiteEntry**](../Model/FavoriteSiteEntry.md)
+[**\Alfresco\Model\FavoriteSiteEntry**](../Model/FavoriteSiteEntry.md)
 
 ### Authorization
 
@@ -135,10 +135,10 @@ Deletes **favoriteId** as a favorite of person **personId**.  You can use the `-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $favorite_id = "favorite_id_example"; // string | The identifier of a favorite.
 
@@ -185,10 +185,10 @@ Delete a site favorite
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 
@@ -223,7 +223,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFavorite**
-> \Alfresco\Core\Model\FavoriteEntry getFavorite($person_id, $favorite_id, $include, $fields)
+> \Alfresco\Model\FavoriteEntry getFavorite($person_id, $favorite_id, $include, $fields)
 
 Get a favorite
 
@@ -235,10 +235,10 @@ Gets favorite **favoriteId** for person **personId**.  You can use the `-me-` st
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $favorite_id = "favorite_id_example"; // string | The identifier of a favorite.
 $include = array("include_example"); // string[] | Returns additional information about favorites, the following optional fields can be requested: * path (note, this only applies to files and folders)
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\FavoriteEntry**](../Model/FavoriteEntry.md)
+[**\Alfresco\Model\FavoriteEntry**](../Model/FavoriteEntry.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFavoriteSite**
-> \Alfresco\Core\Model\SiteEntry getFavoriteSite($person_id, $site_id, $fields)
+> \Alfresco\Model\SiteEntry getFavoriteSite($person_id, $site_id, $fields)
 
 Get a favorite site
 
@@ -290,10 +290,10 @@ Get a favorite site
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteEntry**](../Model/SiteEntry.md)
+[**\Alfresco\Model\SiteEntry**](../Model/SiteEntry.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFavoriteSitesForPerson**
-> \Alfresco\Core\Model\SitePaging listFavoriteSitesForPerson($person_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\SitePaging listFavoriteSitesForPerson($person_id, $skip_count, $max_items, $fields)
 
 List favorite sites
 
@@ -343,10 +343,10 @@ List favorite sites
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SitePaging**](../Model/SitePaging.md)
+[**\Alfresco\Model\SitePaging**](../Model/SitePaging.md)
 
 ### Authorization
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFavorites**
-> \Alfresco\Core\Model\FavoritePaging listFavorites($person_id, $skip_count, $max_items, $where, $include, $fields)
+> \Alfresco\Model\FavoritePaging listFavorites($person_id, $skip_count, $max_items, $where, $include, $fields)
 
 List favorites
 
@@ -398,10 +398,10 @@ Gets a list of favorites for person **personId**.  You can use the `-me-` string
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\FavoritesApi();
+$api_instance = new Alfresco\Api\FavoritesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\FavoritePaging**](../Model/FavoritePaging.md)
+[**\Alfresco\Model\FavoritePaging**](../Model/FavoritePaging.md)
 
 ### Authorization
 

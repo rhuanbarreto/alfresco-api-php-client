@@ -1,4 +1,4 @@
-# Alfresco\Core\RatingsApi
+# Alfresco\RatingsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createRating**
-> \Alfresco\Core\Model\RatingEntry createRating($node_id, $rating_body_create, $fields)
+> \Alfresco\Model\RatingEntry createRating($node_id, $rating_body_create, $fields)
 
 Create a rating
 
@@ -23,12 +23,12 @@ Create a rating for the node with identifier **nodeId**
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RatingsApi();
+$api_instance = new Alfresco\Api\RatingsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$rating_body_create = new \Alfresco\Core\Model\RatingBody(); // \Alfresco\Core\Model\RatingBody | For \"myRating\" the type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.  For example, to \"like\" a file the following body would be used:  ```JSON   {     \"id\": \"likes\",     \"myRating\": true   } ```
+$rating_body_create = new \Alfresco\Model\RatingBody(); // \Alfresco\Model\RatingBody | For \"myRating\" the type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.  For example, to \"like\" a file the following body would be used:  ```JSON   {     \"id\": \"likes\",     \"myRating\": true   } ```
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -45,12 +45,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **rating_body_create** | [**\Alfresco\Core\Model\RatingBody**](../Model/RatingBody.md)| For \&quot;myRating\&quot; the type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.  For example, to \&quot;like\&quot; a file the following body would be used:  &#x60;&#x60;&#x60;JSON   {     \&quot;id\&quot;: \&quot;likes\&quot;,     \&quot;myRating\&quot;: true   } &#x60;&#x60;&#x60; |
+ **rating_body_create** | [**\Alfresco\Model\RatingBody**](../Model/RatingBody.md)| For \&quot;myRating\&quot; the type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.  For example, to \&quot;like\&quot; a file the following body would be used:  &#x60;&#x60;&#x60;JSON   {     \&quot;id\&quot;: \&quot;likes\&quot;,     \&quot;myRating\&quot;: true   } &#x60;&#x60;&#x60; |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\RatingEntry**](../Model/RatingEntry.md)
+[**\Alfresco\Model\RatingEntry**](../Model/RatingEntry.md)
 
 ### Authorization
 
@@ -76,10 +76,10 @@ Deletes rating **ratingId** from node **nodeId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RatingsApi();
+$api_instance = new Alfresco\Api\RatingsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rating_id = "rating_id_example"; // string | The identifier of a rating.
 
@@ -114,7 +114,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRating**
-> \Alfresco\Core\Model\RatingEntry getRating($node_id, $rating_id, $fields)
+> \Alfresco\Model\RatingEntry getRating($node_id, $rating_id, $fields)
 
 Get a rating
 
@@ -126,10 +126,10 @@ Get the specific rating **ratingId** on node **nodeId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RatingsApi();
+$api_instance = new Alfresco\Api\RatingsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rating_id = "rating_id_example"; // string | The identifier of a rating.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RatingEntry**](../Model/RatingEntry.md)
+[**\Alfresco\Model\RatingEntry**](../Model/RatingEntry.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listRatings**
-> \Alfresco\Core\Model\RatingPaging listRatings($node_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\RatingPaging listRatings($node_id, $skip_count, $max_items, $fields)
 
 List ratings
 
@@ -179,10 +179,10 @@ Gets a list of ratings for node **nodeId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RatingsApi();
+$api_instance = new Alfresco\Api\RatingsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RatingPaging**](../Model/RatingPaging.md)
+[**\Alfresco\Model\RatingPaging**](../Model/RatingPaging.md)
 
 ### Authorization
 

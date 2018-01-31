@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * PathInfo Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class PathInfo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'elements' => '\Alfresco\Core\Model\PathElement[]',
+        'elements' => '\Alfresco\Model\PathElement[]',
         'name' => 'string',
         'is_complete' => 'bool'
     ];
@@ -174,7 +174,7 @@ class PathInfo implements ArrayAccess
 
     /**
      * Gets elements
-     * @return \Alfresco\Core\Model\PathElement[]
+     * @return \Alfresco\Model\PathElement[]
      */
     public function getElements()
     {
@@ -183,7 +183,7 @@ class PathInfo implements ArrayAccess
 
     /**
      * Sets elements
-     * @param \Alfresco\Core\Model\PathElement[] $elements
+     * @param \Alfresco\Model\PathElement[] $elements
      * @return $this
      */
     public function setElements($elements)
@@ -286,10 +286,10 @@ class PathInfo implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

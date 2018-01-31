@@ -1,4 +1,4 @@
-# Alfresco\Core\VersionsApi
+# Alfresco\VersionsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -24,10 +24,10 @@ Delete a version
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\VersionsApi();
+$api_instance = new Alfresco\Api\VersionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $version_id = "version_id_example"; // string | The identifier of a version, ie. version label, within the version history of a node.
 
@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVersion**
-> \Alfresco\Core\Model\VersionEntry getVersion($node_id, $version_id)
+> \Alfresco\Model\VersionEntry getVersion($node_id, $version_id)
 
 Get version information
 
@@ -74,10 +74,10 @@ Get version information
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\VersionsApi();
+$api_instance = new Alfresco\Api\VersionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $version_id = "version_id_example"; // string | The identifier of a version, ie. version label, within the version history of a node.
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\VersionEntry**](../Model/VersionEntry.md)
+[**\Alfresco\Model\VersionEntry**](../Model/VersionEntry.md)
 
 ### Authorization
 
@@ -125,10 +125,10 @@ Get version content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\VersionsApi();
+$api_instance = new Alfresco\Api\VersionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $version_id = "version_id_example"; // string | The identifier of a version, ie. version label, within the version history of a node.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
@@ -167,7 +167,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listVersionHistory**
-> \Alfresco\Core\Model\VersionPaging listVersionHistory($node_id, $include, $fields, $skip_count, $max_items)
+> \Alfresco\Model\VersionPaging listVersionHistory($node_id, $include, $fields, $skip_count, $max_items)
 
 List version history
 
@@ -179,10 +179,10 @@ List version history
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\VersionsApi();
+$api_instance = new Alfresco\Api\VersionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $include = array("include_example"); // string[] | Returns additional information about the version node. The following optional fields can be requested: * properties * aspectNames
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\VersionPaging**](../Model/VersionPaging.md)
+[**\Alfresco\Model\VersionPaging**](../Model/VersionPaging.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **revertVersion**
-> \Alfresco\Core\Model\VersionEntry revertVersion($node_id, $version_id, $revert_body, $fields)
+> \Alfresco\Model\VersionEntry revertVersion($node_id, $version_id, $revert_body, $fields)
 
 Revert a version
 
@@ -236,13 +236,13 @@ Revert a version
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\VersionsApi();
+$api_instance = new Alfresco\Api\VersionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $version_id = "version_id_example"; // string | The identifier of a version, ie. version label, within the version history of a node.
-$revert_body = new \Alfresco\Core\Model\RevertBody(); // \Alfresco\Core\Model\RevertBody | Optionally, specify a version comment and whether this should be a major version, or not.
+$revert_body = new \Alfresco\Model\RevertBody(); // \Alfresco\Model\RevertBody | Optionally, specify a version comment and whether this should be a major version, or not.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -260,12 +260,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
  **version_id** | **string**| The identifier of a version, ie. version label, within the version history of a node. |
- **revert_body** | [**\Alfresco\Core\Model\RevertBody**](../Model/RevertBody.md)| Optionally, specify a version comment and whether this should be a major version, or not. |
+ **revert_body** | [**\Alfresco\Model\RevertBody**](../Model/RevertBody.md)| Optionally, specify a version comment and whether this should be a major version, or not. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\VersionEntry**](../Model/VersionEntry.md)
+[**\Alfresco\Model\VersionEntry**](../Model/VersionEntry.md)
 
 ### Authorization
 

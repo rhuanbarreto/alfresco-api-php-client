@@ -1,4 +1,4 @@
-# Alfresco\Core\AuditApi
+# Alfresco\AuditApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -27,10 +27,10 @@ Permanently delete audit entries for an audit application
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
 $where = "where_example"; // string | Audit entries to permanently delete for an audit application, given an inclusive time period or range of ids. For example:  *   ```where=(createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')``` *   ```where=(id BETWEEN ('1234', '4321')```
 
@@ -77,10 +77,10 @@ Permanently delete an audit entry
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
 $audit_entry_id = "audit_entry_id_example"; // string | The identifier of an audit entry.
 
@@ -115,7 +115,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAuditApp**
-> \Alfresco\Core\Model\AuditApp getAuditApp($audit_application_id, $fields)
+> \Alfresco\Model\AuditApp getAuditApp($audit_application_id, $fields)
 
 Get audit application info
 
@@ -127,10 +127,10 @@ Get audit application info
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditApp**](../Model/AuditApp.md)
+[**\Alfresco\Model\AuditApp**](../Model/AuditApp.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAuditEntry**
-> \Alfresco\Core\Model\AuditEntryEntry getAuditEntry($audit_application_id, $audit_entry_id, $fields)
+> \Alfresco\Model\AuditEntryEntry getAuditEntry($audit_application_id, $audit_entry_id, $fields)
 
 Get audit entry
 
@@ -178,10 +178,10 @@ Get audit entry
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
 $audit_entry_id = "audit_entry_id_example"; // string | The identifier of an audit entry.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditEntryEntry**](../Model/AuditEntryEntry.md)
+[**\Alfresco\Model\AuditEntryEntry**](../Model/AuditEntryEntry.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAuditApps**
-> \Alfresco\Core\Model\AuditAppPaging listAuditApps($skip_count, $max_items, $fields)
+> \Alfresco\Model\AuditAppPaging listAuditApps($skip_count, $max_items, $fields)
 
 List audit applications
 
@@ -231,10 +231,10 @@ List audit applications
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditAppPaging**](../Model/AuditAppPaging.md)
+[**\Alfresco\Model\AuditAppPaging**](../Model/AuditAppPaging.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAuditEntriesForAuditApp**
-> \Alfresco\Core\Model\AuditEntryPaging listAuditEntriesForAuditApp($audit_application_id, $skip_count, $order_by, $max_items, $where, $include, $fields)
+> \Alfresco\Model\AuditEntryPaging listAuditEntriesForAuditApp($audit_application_id, $skip_count, $order_by, $max_items, $where, $include, $fields)
 
 List audit entries for an audit application
 
@@ -284,10 +284,10 @@ List audit entries for an audit application
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $order_by = array("order_by_example"); // string[] | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditEntryPaging**](../Model/AuditEntryPaging.md)
+[**\Alfresco\Model\AuditEntryPaging**](../Model/AuditEntryPaging.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAuditEntriesForNode**
-> \Alfresco\Core\Model\AuditEntryPaging listAuditEntriesForNode($node_id, $skip_count, $order_by, $max_items, $where, $include, $fields)
+> \Alfresco\Model\AuditEntryPaging listAuditEntriesForNode($node_id, $skip_count, $order_by, $max_items, $where, $include, $fields)
 
 List audit entries for a node
 
@@ -345,10 +345,10 @@ List audit entries for a node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $order_by = array("order_by_example"); // string[] | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditEntryPaging**](../Model/AuditEntryPaging.md)
+[**\Alfresco\Model\AuditEntryPaging**](../Model/AuditEntryPaging.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAuditApp**
-> \Alfresco\Core\Model\AuditApp updateAuditApp($audit_application_id, $audit_app_body_update, $fields)
+> \Alfresco\Model\AuditApp updateAuditApp($audit_application_id, $audit_app_body_update, $fields)
 
 Update audit application info
 
@@ -406,12 +406,12 @@ Update audit application info
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\AuditApi();
+$api_instance = new Alfresco\Api\AuditApi();
 $audit_application_id = "audit_application_id_example"; // string | The identifier of an audit application.
-$audit_app_body_update = new \Alfresco\Core\Model\AuditBodyUpdate(); // \Alfresco\Core\Model\AuditBodyUpdate | The audit application to update.
+$audit_app_body_update = new \Alfresco\Model\AuditBodyUpdate(); // \Alfresco\Model\AuditBodyUpdate | The audit application to update.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -428,12 +428,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **audit_application_id** | **string**| The identifier of an audit application. |
- **audit_app_body_update** | [**\Alfresco\Core\Model\AuditBodyUpdate**](../Model/AuditBodyUpdate.md)| The audit application to update. |
+ **audit_app_body_update** | [**\Alfresco\Model\AuditBodyUpdate**](../Model/AuditBodyUpdate.md)| The audit application to update. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\AuditApp**](../Model/AuditApp.md)
+[**\Alfresco\Model\AuditApp**](../Model/AuditApp.md)
 
 ### Authorization
 

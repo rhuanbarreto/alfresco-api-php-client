@@ -1,4 +1,4 @@
-# Alfresco\Core\GroupsApi
+# Alfresco\GroupsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createGroup**
-> \Alfresco\Core\Model\GroupEntry createGroup($group_body_create, $include, $fields)
+> \Alfresco\Model\GroupEntry createGroup($group_body_create, $include, $fields)
 
 Create a group
 
@@ -28,11 +28,11 @@ Create a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
-$group_body_create = new \Alfresco\Core\Model\GroupBodyCreate(); // \Alfresco\Core\Model\GroupBodyCreate | The group to create.
+$api_instance = new Alfresco\Api\GroupsApi();
+$group_body_create = new \Alfresco\Model\GroupBodyCreate(); // \Alfresco\Model\GroupBodyCreate | The group to create.
 $include = array("include_example"); // string[] | Returns additional information about the group. The following optional fields can be requested: * parentIds * zones
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -49,13 +49,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_body_create** | [**\Alfresco\Core\Model\GroupBodyCreate**](../Model/GroupBodyCreate.md)| The group to create. |
+ **group_body_create** | [**\Alfresco\Model\GroupBodyCreate**](../Model/GroupBodyCreate.md)| The group to create. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the group. The following optional fields can be requested: * parentIds * zones | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupEntry**](../Model/GroupEntry.md)
+[**\Alfresco\Model\GroupEntry**](../Model/GroupEntry.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createGroupMembership**
-> \Alfresco\Core\Model\GroupMemberEntry createGroupMembership($group_id, $group_membership_body_create, $fields)
+> \Alfresco\Model\GroupMemberEntry createGroupMembership($group_id, $group_membership_body_create, $fields)
 
 Create a group membership
 
@@ -81,12 +81,12 @@ Create a group membership
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
-$group_membership_body_create = new \Alfresco\Core\Model\GroupMembershipBodyCreate(); // \Alfresco\Core\Model\GroupMembershipBodyCreate | The group membership to add (person or sub-group).
+$group_membership_body_create = new \Alfresco\Model\GroupMembershipBodyCreate(); // \Alfresco\Model\GroupMembershipBodyCreate | The group membership to add (person or sub-group).
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -103,12 +103,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| The identifier of a group. |
- **group_membership_body_create** | [**\Alfresco\Core\Model\GroupMembershipBodyCreate**](../Model/GroupMembershipBodyCreate.md)| The group membership to add (person or sub-group). |
+ **group_membership_body_create** | [**\Alfresco\Model\GroupMembershipBodyCreate**](../Model/GroupMembershipBodyCreate.md)| The group membership to add (person or sub-group). |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupMemberEntry**](../Model/GroupMemberEntry.md)
+[**\Alfresco\Model\GroupMemberEntry**](../Model/GroupMemberEntry.md)
 
 ### Authorization
 
@@ -134,10 +134,10 @@ Delete a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
 $cascade = false; // bool | If **true** then the delete will be applied in cascade to sub-groups.
 
@@ -184,10 +184,10 @@ Delete a group membership
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
 $group_member_id = "group_member_id_example"; // string | The identifier of a person or group.
 
@@ -222,7 +222,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGroup**
-> \Alfresco\Core\Model\GroupEntry getGroup($group_id, $include, $fields)
+> \Alfresco\Model\GroupEntry getGroup($group_id, $include, $fields)
 
 Get group details
 
@@ -234,10 +234,10 @@ Get group details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
 $include = array("include_example"); // string[] | Returns additional information about the group. The following optional fields can be requested: * parentIds * zones
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupEntry**](../Model/GroupEntry.md)
+[**\Alfresco\Model\GroupEntry**](../Model/GroupEntry.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listGroupMemberships**
-> \Alfresco\Core\Model\GroupMemberPaging listGroupMemberships($group_id, $skip_count, $max_items, $order_by, $where, $fields)
+> \Alfresco\Model\GroupMemberPaging listGroupMemberships($group_id, $skip_count, $max_items, $order_by, $where, $fields)
 
 List memberships of a group
 
@@ -287,10 +287,10 @@ List memberships of a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupMemberPaging**](../Model/GroupMemberPaging.md)
+[**\Alfresco\Model\GroupMemberPaging**](../Model/GroupMemberPaging.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listGroupMembershipsForPerson**
-> \Alfresco\Core\Model\GroupPaging listGroupMembershipsForPerson($person_id, $skip_count, $max_items, $order_by, $include, $where, $fields)
+> \Alfresco\Model\GroupPaging listGroupMembershipsForPerson($person_id, $skip_count, $max_items, $order_by, $include, $where, $fields)
 
 List group memberships
 
@@ -346,10 +346,10 @@ List group memberships
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupPaging**](../Model/GroupPaging.md)
+[**\Alfresco\Model\GroupPaging**](../Model/GroupPaging.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listGroups**
-> \Alfresco\Core\Model\GroupPaging listGroups($skip_count, $max_items, $order_by, $include, $where, $fields)
+> \Alfresco\Model\GroupPaging listGroups($skip_count, $max_items, $order_by, $include, $where, $fields)
 
 List groups
 
@@ -407,10 +407,10 @@ List groups
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $order_by = array("order_by_example"); // string[] | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupPaging**](../Model/GroupPaging.md)
+[**\Alfresco\Model\GroupPaging**](../Model/GroupPaging.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateGroup**
-> \Alfresco\Core\Model\GroupEntry updateGroup($group_id, $group_body_update, $include, $fields)
+> \Alfresco\Model\GroupEntry updateGroup($group_id, $group_body_update, $include, $fields)
 
 Update group details
 
@@ -466,12 +466,12 @@ Update group details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\GroupsApi();
+$api_instance = new Alfresco\Api\GroupsApi();
 $group_id = "group_id_example"; // string | The identifier of a group.
-$group_body_update = new \Alfresco\Core\Model\GroupBodyUpdate(); // \Alfresco\Core\Model\GroupBodyUpdate | The group information to update.
+$group_body_update = new \Alfresco\Model\GroupBodyUpdate(); // \Alfresco\Model\GroupBodyUpdate | The group information to update.
 $include = array("include_example"); // string[] | Returns additional information about the group. The following optional fields can be requested: * parentIds * zones
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -489,13 +489,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| The identifier of a group. |
- **group_body_update** | [**\Alfresco\Core\Model\GroupBodyUpdate**](../Model/GroupBodyUpdate.md)| The group information to update. |
+ **group_body_update** | [**\Alfresco\Model\GroupBodyUpdate**](../Model/GroupBodyUpdate.md)| The group information to update. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the group. The following optional fields can be requested: * parentIds * zones | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\GroupEntry**](../Model/GroupEntry.md)
+[**\Alfresco\Model\GroupEntry**](../Model/GroupEntry.md)
 
 ### Authorization
 

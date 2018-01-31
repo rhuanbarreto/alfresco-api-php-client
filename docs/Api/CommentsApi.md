@@ -1,4 +1,4 @@
-# Alfresco\Core\CommentsApi
+# Alfresco\CommentsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createComment**
-> \Alfresco\Core\Model\CommentEntry createComment($node_id, $comment_body_create, $fields)
+> \Alfresco\Model\CommentEntry createComment($node_id, $comment_body_create, $fields)
 
 Create a comment
 
@@ -23,12 +23,12 @@ Creates a comment on node **nodeId**. You specify the comment in a JSON body lik
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\CommentsApi();
+$api_instance = new Alfresco\Api\CommentsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$comment_body_create = new \Alfresco\Core\Model\CommentBody(); // \Alfresco\Core\Model\CommentBody | The comment text. Note that you can also provide a list of comments.
+$comment_body_create = new \Alfresco\Model\CommentBody(); // \Alfresco\Model\CommentBody | The comment text. Note that you can also provide a list of comments.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -45,12 +45,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **comment_body_create** | [**\Alfresco\Core\Model\CommentBody**](../Model/CommentBody.md)| The comment text. Note that you can also provide a list of comments. |
+ **comment_body_create** | [**\Alfresco\Model\CommentBody**](../Model/CommentBody.md)| The comment text. Note that you can also provide a list of comments. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\CommentEntry**](../Model/CommentEntry.md)
+[**\Alfresco\Model\CommentEntry**](../Model/CommentEntry.md)
 
 ### Authorization
 
@@ -76,10 +76,10 @@ Deletes the comment **commentId** from node **nodeId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\CommentsApi();
+$api_instance = new Alfresco\Api\CommentsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $comment_id = "comment_id_example"; // string | The identifier of a comment.
 
@@ -114,7 +114,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listComments**
-> \Alfresco\Core\Model\CommentPaging listComments($node_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\CommentPaging listComments($node_id, $skip_count, $max_items, $fields)
 
 List comments
 
@@ -126,10 +126,10 @@ Gets a list of comments for the node **nodeId**, sorted chronologically with the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\CommentsApi();
+$api_instance = new Alfresco\Api\CommentsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\CommentPaging**](../Model/CommentPaging.md)
+[**\Alfresco\Model\CommentPaging**](../Model/CommentPaging.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateComment**
-> \Alfresco\Core\Model\CommentEntry updateComment($node_id, $comment_id, $comment_body_update, $fields)
+> \Alfresco\Model\CommentEntry updateComment($node_id, $comment_id, $comment_body_update, $fields)
 
 Update a comment
 
@@ -181,13 +181,13 @@ Updates an existing comment **commentId** on node **nodeId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\CommentsApi();
+$api_instance = new Alfresco\Api\CommentsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $comment_id = "comment_id_example"; // string | The identifier of a comment.
-$comment_body_update = new \Alfresco\Core\Model\CommentBody(); // \Alfresco\Core\Model\CommentBody | The JSON representing the comment to be updated.
+$comment_body_update = new \Alfresco\Model\CommentBody(); // \Alfresco\Model\CommentBody | The JSON representing the comment to be updated.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -205,12 +205,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
  **comment_id** | **string**| The identifier of a comment. |
- **comment_body_update** | [**\Alfresco\Core\Model\CommentBody**](../Model/CommentBody.md)| The JSON representing the comment to be updated. |
+ **comment_body_update** | [**\Alfresco\Model\CommentBody**](../Model/CommentBody.md)| The JSON representing the comment to be updated. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\CommentEntry**](../Model/CommentEntry.md)
+[**\Alfresco\Model\CommentEntry**](../Model/CommentEntry.md)
 
 ### Authorization
 

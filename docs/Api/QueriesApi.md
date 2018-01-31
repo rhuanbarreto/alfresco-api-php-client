@@ -1,4 +1,4 @@
-# Alfresco\Core\QueriesApi
+# Alfresco\QueriesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **findNodes**
-> \Alfresco\Core\Model\NodePaging findNodes($term, $root_node_id, $skip_count, $max_items, $node_type, $include, $order_by, $fields)
+> \Alfresco\Model\NodePaging findNodes($term, $root_node_id, $skip_count, $max_items, $node_type, $include, $order_by, $fields)
 
 Find nodes
 
@@ -22,10 +22,10 @@ Find nodes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\QueriesApi();
+$api_instance = new Alfresco\Api\QueriesApi();
 $term = "term_example"; // string | The term to search for.
 $root_node_id = "root_node_id_example"; // string | The id of the node to start the search from.  Supports the aliases -my-, -root- and -shared-.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodePaging**](../Model/NodePaging.md)
+[**\Alfresco\Model\NodePaging**](../Model/NodePaging.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findPeople**
-> \Alfresco\Core\Model\PersonPaging findPeople($term, $skip_count, $max_items, $fields, $order_by)
+> \Alfresco\Model\PersonPaging findPeople($term, $skip_count, $max_items, $fields, $order_by)
 
 Find people
 
@@ -85,10 +85,10 @@ Find people
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\QueriesApi();
+$api_instance = new Alfresco\Api\QueriesApi();
 $term = "term_example"; // string | The term to search for.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonPaging**](../Model/PersonPaging.md)
+[**\Alfresco\Model\PersonPaging**](../Model/PersonPaging.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findSites**
-> \Alfresco\Core\Model\SitePaging findSites($term, $skip_count, $max_items, $order_by, $fields)
+> \Alfresco\Model\SitePaging findSites($term, $skip_count, $max_items, $order_by, $fields)
 
 Find sites
 
@@ -142,10 +142,10 @@ Find sites
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\QueriesApi();
+$api_instance = new Alfresco\Api\QueriesApi();
 $term = "term_example"; // string | The term to search for.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SitePaging**](../Model/SitePaging.md)
+[**\Alfresco\Model\SitePaging**](../Model/SitePaging.md)
 
 ### Authorization
 

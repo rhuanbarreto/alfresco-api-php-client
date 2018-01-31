@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Error Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class Error implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'error' => '\Alfresco\Core\Model\ErrorError'
+        'error' => '\Alfresco\Model\ErrorError'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Error implements ArrayAccess
 
     /**
      * Gets error
-     * @return \Alfresco\Core\Model\ErrorError
+     * @return \Alfresco\Model\ErrorError
      */
     public function getError()
     {
@@ -171,7 +171,7 @@ class Error implements ArrayAccess
 
     /**
      * Sets error
-     * @param \Alfresco\Core\Model\ErrorError $error
+     * @param \Alfresco\Model\ErrorError $error
      * @return $this
      */
     public function setError($error)
@@ -232,10 +232,10 @@ class Error implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

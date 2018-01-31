@@ -1,4 +1,4 @@
-# Alfresco\Core\RenditionsApi
+# Alfresco\RenditionsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -23,12 +23,12 @@ Create rendition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RenditionsApi();
+$api_instance = new Alfresco\Api\RenditionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
-$rendition_body_create = new \Alfresco\Core\Model\RenditionBodyCreate(); // \Alfresco\Core\Model\RenditionBodyCreate | The rendition \"id\".
+$rendition_body_create = new \Alfresco\Model\RenditionBodyCreate(); // \Alfresco\Model\RenditionBodyCreate | The rendition \"id\".
 
 try {
     $api_instance->createRendition($node_id, $rendition_body_create);
@@ -43,7 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **node_id** | **string**| The identifier of a node. |
- **rendition_body_create** | [**\Alfresco\Core\Model\RenditionBodyCreate**](../Model/RenditionBodyCreate.md)| The rendition \&quot;id\&quot;. |
+ **rendition_body_create** | [**\Alfresco\Model\RenditionBodyCreate**](../Model/RenditionBodyCreate.md)| The rendition \&quot;id\&quot;. |
 
 ### Return type
 
@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRendition**
-> \Alfresco\Core\Model\RenditionEntry getRendition($node_id, $rendition_id)
+> \Alfresco\Model\RenditionEntry getRendition($node_id, $rendition_id)
 
 Get rendition information
 
@@ -73,10 +73,10 @@ Get rendition information
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RenditionsApi();
+$api_instance = new Alfresco\Api\RenditionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionEntry**](../Model/RenditionEntry.md)
+[**\Alfresco\Model\RenditionEntry**](../Model/RenditionEntry.md)
 
 ### Authorization
 
@@ -124,10 +124,10 @@ Get rendition content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RenditionsApi();
+$api_instance = new Alfresco\Api\RenditionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
@@ -168,7 +168,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listRenditions**
-> \Alfresco\Core\Model\RenditionPaging listRenditions($node_id, $where)
+> \Alfresco\Model\RenditionPaging listRenditions($node_id, $where)
 
 List renditions
 
@@ -180,10 +180,10 @@ List renditions
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\RenditionsApi();
+$api_instance = new Alfresco\Api\RenditionsApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $where = "where_example"; // string | A string to restrict the returned objects by using a predicate.
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionPaging**](../Model/RenditionPaging.md)
+[**\Alfresco\Model\RenditionPaging**](../Model/RenditionPaging.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * AuditEntryEntry Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class AuditEntryEntry implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entry' => '\Alfresco\Core\Model\AuditEntry'
+        'entry' => '\Alfresco\Model\AuditEntry'
     ];
 
     /**
@@ -162,7 +162,7 @@ class AuditEntryEntry implements ArrayAccess
 
     /**
      * Gets entry
-     * @return \Alfresco\Core\Model\AuditEntry
+     * @return \Alfresco\Model\AuditEntry
      */
     public function getEntry()
     {
@@ -171,7 +171,7 @@ class AuditEntryEntry implements ArrayAccess
 
     /**
      * Sets entry
-     * @param \Alfresco\Core\Model\AuditEntry $entry
+     * @param \Alfresco\Model\AuditEntry $entry
      * @return $this
      */
     public function setEntry($entry)
@@ -232,10 +232,10 @@ class AuditEntryEntry implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

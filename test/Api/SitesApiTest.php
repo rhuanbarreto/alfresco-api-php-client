@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Alfresco\Core;
+namespace Alfresco;
 
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\Configuration;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\ObjectSerializer;
 
 /**
  * SitesApiTest Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

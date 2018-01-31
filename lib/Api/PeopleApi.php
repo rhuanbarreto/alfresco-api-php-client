@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * PeopleApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class PeopleApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class PeopleApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class PeopleApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return PeopleApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,10 +92,10 @@ class PeopleApi
      *
      * Create person
      *
-     * @param \Alfresco\Core\Model\PersonBodyCreate $person_body_create The person details. (required)
+     * @param \Alfresco\Model\PersonBodyCreate $person_body_create The person details. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\PersonEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\PersonEntry
      */
     public function createPerson($person_body_create, $fields = null)
     {
@@ -108,10 +108,10 @@ class PeopleApi
      *
      * Create person
      *
-     * @param \Alfresco\Core\Model\PersonBodyCreate $person_body_create The person details. (required)
+     * @param \Alfresco\Model\PersonBodyCreate $person_body_create The person details. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPersonWithHttpInfo($person_body_create, $fields = null)
     {
@@ -162,19 +162,19 @@ class PeopleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\PersonEntry',
+                '\Alfresco\Model\PersonEntry',
                 '/people'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\PersonEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\PersonEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -189,7 +189,7 @@ class PeopleApi
      * Delete avatar image
      *
      * @param string $person_id The identifier of a person. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteAvatarImage($person_id)
@@ -204,7 +204,7 @@ class PeopleApi
      * Delete avatar image
      *
      * @param string $person_id The identifier of a person. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAvatarImageWithHttpInfo($person_id)
@@ -260,7 +260,7 @@ class PeopleApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -278,7 +278,7 @@ class PeopleApi
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
      * @param bool $placeholder If **true** and there is no avatar for this **personId**  then the placeholder image is returned, rather than a 404 response. (optional, default to true)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function getAvatarImage($person_id, $attachment = 'true', $if_modified_since = null, $placeholder = 'true')
@@ -296,7 +296,7 @@ class PeopleApi
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
      * @param bool $placeholder If **true** and there is no avatar for this **personId**  then the placeholder image is returned, rather than a 404 response. (optional, default to true)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAvatarImageWithHttpInfo($person_id, $attachment = 'true', $if_modified_since = null, $placeholder = 'true')
@@ -364,7 +364,7 @@ class PeopleApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -380,8 +380,8 @@ class PeopleApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\PersonEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\PersonEntry
      */
     public function getPerson($person_id, $fields = null)
     {
@@ -396,8 +396,8 @@ class PeopleApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPersonWithHttpInfo($person_id, $fields = null)
     {
@@ -451,19 +451,19 @@ class PeopleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\PersonEntry',
+                '\Alfresco\Model\PersonEntry',
                 '/people/{personId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\PersonEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\PersonEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -482,8 +482,8 @@ class PeopleApi
      * @param string[] $order_by A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. (optional)
      * @param string[] $include Returns additional information about the person. The following optional fields can be requested: * properties * aspectNames (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\PersonPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\PersonPaging
      */
     public function listPeople($skip_count = '0', $max_items = '100', $order_by = null, $include = null, $fields = null)
     {
@@ -501,8 +501,8 @@ class PeopleApi
      * @param string[] $order_by A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. (optional)
      * @param string[] $include Returns additional information about the person. The following optional fields can be requested: * properties * aspectNames (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\PersonPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\PersonPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPeopleWithHttpInfo($skip_count = '0', $max_items = '100', $order_by = null, $include = null, $fields = null)
     {
@@ -574,19 +574,19 @@ class PeopleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\PersonPaging',
+                '\Alfresco\Model\PersonPaging',
                 '/people'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\PersonPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\PersonPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\PersonPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\PersonPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -601,8 +601,8 @@ class PeopleApi
      * Request password reset
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\ClientBody $client_body The client name to send email with app-specific url. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\ClientBody $client_body The client name to send email with app-specific url. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function requestPasswordReset($person_id, $client_body)
@@ -617,8 +617,8 @@ class PeopleApi
      * Request password reset
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\ClientBody $client_body The client name to send email with app-specific url. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\ClientBody $client_body The client name to send email with app-specific url. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function requestPasswordResetWithHttpInfo($person_id, $client_body)
@@ -694,8 +694,8 @@ class PeopleApi
      * Reset password
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\PasswordResetBody $password_reset_body The reset password details (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\PasswordResetBody $password_reset_body The reset password details (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function resetPassword($person_id, $password_reset_body)
@@ -710,8 +710,8 @@ class PeopleApi
      * Reset password
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\PasswordResetBody $password_reset_body The reset password details (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\PasswordResetBody $password_reset_body The reset password details (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function resetPasswordWithHttpInfo($person_id, $password_reset_body)
@@ -788,7 +788,7 @@ class PeopleApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $content_body_update The binary content (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function updateAvatarImage($person_id, $content_body_update)
@@ -804,7 +804,7 @@ class PeopleApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $content_body_update The binary content (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAvatarImageWithHttpInfo($person_id, $content_body_update)
@@ -869,7 +869,7 @@ class PeopleApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -884,10 +884,10 @@ class PeopleApi
      * Update person
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\PersonBodyUpdate $person_body_update The person details. (required)
+     * @param \Alfresco\Model\PersonBodyUpdate $person_body_update The person details. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\PersonEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\PersonEntry
      */
     public function updatePerson($person_id, $person_body_update, $fields = null)
     {
@@ -901,10 +901,10 @@ class PeopleApi
      * Update person
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\PersonBodyUpdate $person_body_update The person details. (required)
+     * @param \Alfresco\Model\PersonBodyUpdate $person_body_update The person details. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\PersonEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePersonWithHttpInfo($person_id, $person_body_update, $fields = null)
     {
@@ -967,19 +967,19 @@ class PeopleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\PersonEntry',
+                '\Alfresco\Model\PersonEntry',
                 '/people/{personId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\PersonEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\PersonEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\PersonEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

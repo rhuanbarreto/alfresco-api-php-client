@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * NodeAssociationEntry Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class NodeAssociationEntry implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entry' => '\Alfresco\Core\Model\NodeAssociation'
+        'entry' => '\Alfresco\Model\NodeAssociation'
     ];
 
     /**
@@ -168,7 +168,7 @@ class NodeAssociationEntry implements ArrayAccess
 
     /**
      * Gets entry
-     * @return \Alfresco\Core\Model\NodeAssociation
+     * @return \Alfresco\Model\NodeAssociation
      */
     public function getEntry()
     {
@@ -177,7 +177,7 @@ class NodeAssociationEntry implements ArrayAccess
 
     /**
      * Sets entry
-     * @param \Alfresco\Core\Model\NodeAssociation $entry
+     * @param \Alfresco\Model\NodeAssociation $entry
      * @return $this
      */
     public function setEntry($entry)
@@ -238,10 +238,10 @@ class NodeAssociationEntry implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

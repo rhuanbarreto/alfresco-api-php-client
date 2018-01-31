@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * PersonBodyUpdate Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class PersonBodyUpdate implements ArrayAccess
         'instant_message_id' => 'string',
         'job_title' => 'string',
         'location' => 'string',
-        'company' => '\Alfresco\Core\Model\Company',
+        'company' => '\Alfresco\Model\Company',
         'mobile' => 'string',
         'telephone' => 'string',
         'user_status' => 'string',
@@ -459,7 +459,7 @@ class PersonBodyUpdate implements ArrayAccess
 
     /**
      * Gets company
-     * @return \Alfresco\Core\Model\Company
+     * @return \Alfresco\Model\Company
      */
     public function getCompany()
     {
@@ -468,7 +468,7 @@ class PersonBodyUpdate implements ArrayAccess
 
     /**
      * Sets company
-     * @param \Alfresco\Core\Model\Company $company
+     * @param \Alfresco\Model\Company $company
      * @return $this
      */
     public function setCompany($company)
@@ -718,10 +718,10 @@ class PersonBodyUpdate implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

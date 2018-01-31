@@ -1,4 +1,4 @@
-# Alfresco\Core\TrashcanApi
+# Alfresco\TrashcanApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -27,10 +27,10 @@ Permanently delete a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 
 try {
@@ -63,7 +63,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getArchivedNodeRendition**
-> \Alfresco\Core\Model\RenditionEntry getArchivedNodeRendition($node_id, $rendition_id)
+> \Alfresco\Model\RenditionEntry getArchivedNodeRendition($node_id, $rendition_id)
 
 Get rendition information for a deleted node
 
@@ -75,10 +75,10 @@ Get rendition information for a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionEntry**](../Model/RenditionEntry.md)
+[**\Alfresco\Model\RenditionEntry**](../Model/RenditionEntry.md)
 
 ### Authorization
 
@@ -126,10 +126,10 @@ Get rendition content of a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
@@ -170,7 +170,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeletedNode**
-> \Alfresco\Core\Model\DeletedNodeEntry getDeletedNode($node_id, $include)
+> \Alfresco\Model\DeletedNodeEntry getDeletedNode($node_id, $include)
 
 Get a deleted node
 
@@ -182,10 +182,10 @@ Get a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isLocked * path * permissions
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\DeletedNodeEntry**](../Model/DeletedNodeEntry.md)
+[**\Alfresco\Model\DeletedNodeEntry**](../Model/DeletedNodeEntry.md)
 
 ### Authorization
 
@@ -233,10 +233,10 @@ Get deleted node content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
 $if_modified_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`.
@@ -273,7 +273,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDeletedNodeRenditions**
-> \Alfresco\Core\Model\RenditionPaging listDeletedNodeRenditions($node_id, $where)
+> \Alfresco\Model\RenditionPaging listDeletedNodeRenditions($node_id, $where)
 
 List renditions for a deleted node
 
@@ -285,10 +285,10 @@ List renditions for a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $where = "where_example"; // string | A string to restrict the returned objects by using a predicate.
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionPaging**](../Model/RenditionPaging.md)
+[**\Alfresco\Model\RenditionPaging**](../Model/RenditionPaging.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDeletedNodes**
-> \Alfresco\Core\Model\DeletedNodesPaging listDeletedNodes($skip_count, $max_items, $include)
+> \Alfresco\Model\DeletedNodesPaging listDeletedNodes($skip_count, $max_items, $include)
 
 List deleted nodes
 
@@ -336,10 +336,10 @@ List deleted nodes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $include = array("include_example"); // string[] | Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isLocked * path * properties * permissions
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\DeletedNodesPaging**](../Model/DeletedNodesPaging.md)
+[**\Alfresco\Model\DeletedNodesPaging**](../Model/DeletedNodesPaging.md)
 
 ### Authorization
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **restoreDeletedNode**
-> \Alfresco\Core\Model\NodeEntry restoreDeletedNode($node_id, $fields)
+> \Alfresco\Model\NodeEntry restoreDeletedNode($node_id, $fields)
 
 Restore a deleted node
 
@@ -389,10 +389,10 @@ Restore a deleted node
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\TrashcanApi();
+$api_instance = new Alfresco\Api\TrashcanApi();
 $node_id = "node_id_example"; // string | The identifier of a node.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\NodeEntry**](../Model/NodeEntry.md)
+[**\Alfresco\Model\NodeEntry**](../Model/NodeEntry.md)
 
 ### Authorization
 

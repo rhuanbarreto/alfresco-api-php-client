@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SitePagingList Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class SitePagingList implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pagination' => '\Alfresco\Core\Model\Pagination',
-        'entries' => '\Alfresco\Core\Model\SiteEntry[]'
+        'pagination' => '\Alfresco\Model\Pagination',
+        'entries' => '\Alfresco\Model\SiteEntry[]'
     ];
 
     /**
@@ -180,7 +180,7 @@ class SitePagingList implements ArrayAccess
 
     /**
      * Gets pagination
-     * @return \Alfresco\Core\Model\Pagination
+     * @return \Alfresco\Model\Pagination
      */
     public function getPagination()
     {
@@ -189,7 +189,7 @@ class SitePagingList implements ArrayAccess
 
     /**
      * Sets pagination
-     * @param \Alfresco\Core\Model\Pagination $pagination
+     * @param \Alfresco\Model\Pagination $pagination
      * @return $this
      */
     public function setPagination($pagination)
@@ -201,7 +201,7 @@ class SitePagingList implements ArrayAccess
 
     /**
      * Gets entries
-     * @return \Alfresco\Core\Model\SiteEntry[]
+     * @return \Alfresco\Model\SiteEntry[]
      */
     public function getEntries()
     {
@@ -210,7 +210,7 @@ class SitePagingList implements ArrayAccess
 
     /**
      * Sets entries
-     * @param \Alfresco\Core\Model\SiteEntry[] $entries
+     * @param \Alfresco\Model\SiteEntry[] $entries
      * @return $this
      */
     public function setEntries($entries)
@@ -271,10 +271,10 @@ class SitePagingList implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

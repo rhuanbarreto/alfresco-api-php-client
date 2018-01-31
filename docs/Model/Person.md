@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **instant_message_id** | **string** |  | [optional] 
 **job_title** | **string** |  | [optional] 
 **location** | **string** |  | [optional] 
-**company** | [**\Alfresco\Core\Model\Company**](Company.md) |  | [optional] 
+**company** | [**\Alfresco\Model\Company**](Company.md) |  | [optional] 
 **mobile** | **string** |  | [optional] 
 **telephone** | **string** |  | [optional] 
 **status_updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * NodeBodyCreate Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class NodeBodyCreate implements ArrayAccess
         'aspect_names' => 'string[]',
         'properties' => 'map[string,string]',
         'relative_path' => 'string',
-        'association' => '\Alfresco\Core\Model\NodeBodyCreateAssociation',
-        'secondary_children' => '\Alfresco\Core\Model\ChildAssociationBody[]',
-        'targets' => '\Alfresco\Core\Model\AssociationBody[]'
+        'association' => '\Alfresco\Model\NodeBodyCreateAssociation',
+        'secondary_children' => '\Alfresco\Model\ChildAssociationBody[]',
+        'targets' => '\Alfresco\Model\AssociationBody[]'
     ];
 
     /**
@@ -333,7 +333,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Gets association
-     * @return \Alfresco\Core\Model\NodeBodyCreateAssociation
+     * @return \Alfresco\Model\NodeBodyCreateAssociation
      */
     public function getAssociation()
     {
@@ -342,7 +342,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Sets association
-     * @param \Alfresco\Core\Model\NodeBodyCreateAssociation $association
+     * @param \Alfresco\Model\NodeBodyCreateAssociation $association
      * @return $this
      */
     public function setAssociation($association)
@@ -354,7 +354,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Gets secondary_children
-     * @return \Alfresco\Core\Model\ChildAssociationBody[]
+     * @return \Alfresco\Model\ChildAssociationBody[]
      */
     public function getSecondaryChildren()
     {
@@ -363,7 +363,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Sets secondary_children
-     * @param \Alfresco\Core\Model\ChildAssociationBody[] $secondary_children
+     * @param \Alfresco\Model\ChildAssociationBody[] $secondary_children
      * @return $this
      */
     public function setSecondaryChildren($secondary_children)
@@ -375,7 +375,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Gets targets
-     * @return \Alfresco\Core\Model\AssociationBody[]
+     * @return \Alfresco\Model\AssociationBody[]
      */
     public function getTargets()
     {
@@ -384,7 +384,7 @@ class NodeBodyCreate implements ArrayAccess
 
     /**
      * Sets targets
-     * @param \Alfresco\Core\Model\AssociationBody[] $targets
+     * @param \Alfresco\Model\AssociationBody[] $targets
      * @return $this
      */
     public function setTargets($targets)
@@ -445,10 +445,10 @@ class NodeBodyCreate implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

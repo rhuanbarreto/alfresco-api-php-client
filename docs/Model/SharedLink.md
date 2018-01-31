@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **title** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **modified_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**modified_by_user** | [**\Alfresco\Core\Model\UserInfo**](UserInfo.md) |  | [optional] 
-**shared_by_user** | [**\Alfresco\Core\Model\UserInfo**](UserInfo.md) |  | [optional] 
-**content** | [**\Alfresco\Core\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
+**modified_by_user** | [**\Alfresco\Model\UserInfo**](UserInfo.md) |  | [optional] 
+**shared_by_user** | [**\Alfresco\Model\UserInfo**](UserInfo.md) |  | [optional] 
+**content** | [**\Alfresco\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
 **allowable_operations** | **string[]** | The allowable operations for the Quickshare link itself. See allowableOperationsOnTarget for the allowable operations pertaining to the linked content node. | [optional] 
 **allowable_operations_on_target** | **string[]** | The allowable operations for the content node being shared. | [optional] 
 

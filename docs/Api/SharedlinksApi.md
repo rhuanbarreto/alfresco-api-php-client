@@ -1,4 +1,4 @@
-# Alfresco\Core\SharedlinksApi
+# Alfresco\SharedlinksApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createSharedLink**
-> \Alfresco\Core\Model\SharedLinkEntry createSharedLink($shared_link_body_create, $include, $fields)
+> \Alfresco\Model\SharedLinkEntry createSharedLink($shared_link_body_create, $include, $fields)
 
 Create a shared link to a file
 
@@ -28,11 +28,11 @@ Create a shared link to a file
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
-$shared_link_body_create = new \Alfresco\Core\Model\SharedLinkBodyCreate(); // \Alfresco\Core\Model\SharedLinkBodyCreate | The nodeId to create a shared link for.
+$api_instance = new Alfresco\Api\SharedlinksApi();
+$shared_link_body_create = new \Alfresco\Model\SharedLinkBodyCreate(); // \Alfresco\Model\SharedLinkBodyCreate | The nodeId to create a shared link for.
 $include = array("include_example"); // string[] | Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -49,13 +49,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shared_link_body_create** | [**\Alfresco\Core\Model\SharedLinkBodyCreate**](../Model/SharedLinkBodyCreate.md)| The nodeId to create a shared link for. |
+ **shared_link_body_create** | [**\Alfresco\Model\SharedLinkBodyCreate**](../Model/SharedLinkBodyCreate.md)| The nodeId to create a shared link for. |
  **include** | [**string[]**](../Model/string.md)| Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path | [optional]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SharedLinkEntry**](../Model/SharedLinkEntry.md)
+[**\Alfresco\Model\SharedLinkEntry**](../Model/SharedLinkEntry.md)
 
 ### Authorization
 
@@ -81,10 +81,10 @@ Deletes a shared link
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 
 try {
@@ -129,12 +129,12 @@ Email shared link
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
-$shared_link_body_email = new \Alfresco\Core\Model\SharedLinkBodyEmail(); // \Alfresco\Core\Model\SharedLinkBodyEmail | The shared link email to send.
+$shared_link_body_email = new \Alfresco\Model\SharedLinkBodyEmail(); // \Alfresco\Model\SharedLinkBodyEmail | The shared link email to send.
 
 try {
     $api_instance->emailSharedLink($shared_id, $shared_link_body_email);
@@ -149,7 +149,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shared_id** | **string**| The identifier of a shared link to a file. |
- **shared_link_body_email** | [**\Alfresco\Core\Model\SharedLinkBodyEmail**](../Model/SharedLinkBodyEmail.md)| The shared link email to send. |
+ **shared_link_body_email** | [**\Alfresco\Model\SharedLinkBodyEmail**](../Model/SharedLinkBodyEmail.md)| The shared link email to send. |
 
 ### Return type
 
@@ -167,7 +167,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSharedLink**
-> \Alfresco\Core\Model\SharedLinkEntry getSharedLink($shared_id, $fields)
+> \Alfresco\Model\SharedLinkEntry getSharedLink($shared_id, $fields)
 
 Get a shared link
 
@@ -179,10 +179,10 @@ Get a shared link
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SharedLinkEntry**](../Model/SharedLinkEntry.md)
+[**\Alfresco\Model\SharedLinkEntry**](../Model/SharedLinkEntry.md)
 
 ### Authorization
 
@@ -230,10 +230,10 @@ Get shared link content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
 $if_modified_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`.
@@ -270,7 +270,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSharedLinkRendition**
-> \Alfresco\Core\Model\RenditionEntry getSharedLinkRendition($shared_id, $rendition_id)
+> \Alfresco\Model\RenditionEntry getSharedLinkRendition($shared_id, $rendition_id)
 
 Get shared link rendition information
 
@@ -282,10 +282,10 @@ Get shared link rendition information
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionEntry**](../Model/RenditionEntry.md)
+[**\Alfresco\Model\RenditionEntry**](../Model/RenditionEntry.md)
 
 ### Authorization
 
@@ -333,10 +333,10 @@ Get shared link rendition content
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 $rendition_id = "rendition_id_example"; // string | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
@@ -375,7 +375,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSharedLinkRenditions**
-> \Alfresco\Core\Model\RenditionPaging listSharedLinkRenditions($shared_id)
+> \Alfresco\Model\RenditionPaging listSharedLinkRenditions($shared_id)
 
 List renditions for a shared link
 
@@ -387,10 +387,10 @@ List renditions for a shared link
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $shared_id = "shared_id_example"; // string | The identifier of a shared link to a file.
 
 try {
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\RenditionPaging**](../Model/RenditionPaging.md)
+[**\Alfresco\Model\RenditionPaging**](../Model/RenditionPaging.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSharedLinks**
-> \Alfresco\Core\Model\SharedLinkPaging listSharedLinks($skip_count, $max_items, $where, $include, $fields)
+> \Alfresco\Model\SharedLinkPaging listSharedLinks($skip_count, $max_items, $where, $include, $fields)
 
 List shared links
 
@@ -436,10 +436,10 @@ List shared links
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SharedlinksApi();
+$api_instance = new Alfresco\Api\SharedlinksApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $where = "where_example"; // string | Optionally filter the list by \"sharedByUser\" userid of person who shared the link (can also use -me-)  *   ```where=(sharedByUser='jbloggs')```  *   ```where=(sharedByUser='-me-')```
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SharedLinkPaging**](../Model/SharedLinkPaging.md)
+[**\Alfresco\Model\SharedLinkPaging**](../Model/SharedLinkPaging.md)
 
 ### Authorization
 

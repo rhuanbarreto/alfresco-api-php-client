@@ -1,4 +1,4 @@
-# Alfresco\Core\ActivitiesApi
+# Alfresco\ActivitiesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listActivitiesForPerson**
-> \Alfresco\Core\Model\ActivityPaging listActivitiesForPerson($person_id, $skip_count, $max_items, $who, $site_id, $fields)
+> \Alfresco\Model\ActivityPaging listActivitiesForPerson($person_id, $skip_count, $max_items, $who, $site_id, $fields)
 
 List activities
 
@@ -20,10 +20,10 @@ Gets a list of activities for person **personId**.  You can use the `-me-` strin
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\ActivitiesApi();
+$api_instance = new Alfresco\Api\ActivitiesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\ActivityPaging**](../Model/ActivityPaging.md)
+[**\Alfresco\Model\ActivityPaging**](../Model/ActivityPaging.md)
 
 ### Authorization
 

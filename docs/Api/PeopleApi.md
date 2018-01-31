@@ -1,4 +1,4 @@
-# Alfresco\Core\PeopleApi
+# Alfresco\PeopleApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createPerson**
-> \Alfresco\Core\Model\PersonEntry createPerson($person_body_create, $fields)
+> \Alfresco\Model\PersonEntry createPerson($person_body_create, $fields)
 
 Create person
 
@@ -28,11 +28,11 @@ Create person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
-$person_body_create = new \Alfresco\Core\Model\PersonBodyCreate(); // \Alfresco\Core\Model\PersonBodyCreate | The person details.
+$api_instance = new Alfresco\Api\PeopleApi();
+$person_body_create = new \Alfresco\Model\PersonBodyCreate(); // \Alfresco\Model\PersonBodyCreate | The person details.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -48,12 +48,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_body_create** | [**\Alfresco\Core\Model\PersonBodyCreate**](../Model/PersonBodyCreate.md)| The person details. |
+ **person_body_create** | [**\Alfresco\Model\PersonBodyCreate**](../Model/PersonBodyCreate.md)| The person details. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonEntry**](../Model/PersonEntry.md)
+[**\Alfresco\Model\PersonEntry**](../Model/PersonEntry.md)
 
 ### Authorization
 
@@ -79,10 +79,10 @@ Delete avatar image
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 
 try {
@@ -127,10 +127,10 @@ Get avatar image
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $attachment = true; // bool | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response.
 $if_modified_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`.
@@ -169,7 +169,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPerson**
-> \Alfresco\Core\Model\PersonEntry getPerson($person_id, $fields)
+> \Alfresco\Model\PersonEntry getPerson($person_id, $fields)
 
 Get a person
 
@@ -181,10 +181,10 @@ Gets information for the person **personId**.  You can use the `-me-` string in 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonEntry**](../Model/PersonEntry.md)
+[**\Alfresco\Model\PersonEntry**](../Model/PersonEntry.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPeople**
-> \Alfresco\Core\Model\PersonPaging listPeople($skip_count, $max_items, $order_by, $include, $fields)
+> \Alfresco\Model\PersonPaging listPeople($skip_count, $max_items, $order_by, $include, $fields)
 
 List people
 
@@ -232,10 +232,10 @@ List people
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $order_by = array("order_by_example"); // string[] | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonPaging**](../Model/PersonPaging.md)
+[**\Alfresco\Model\PersonPaging**](../Model/PersonPaging.md)
 
 ### Authorization
 
@@ -289,12 +289,12 @@ Request password reset
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$client_body = new \Alfresco\Core\Model\ClientBody(); // \Alfresco\Core\Model\ClientBody | The client name to send email with app-specific url.
+$client_body = new \Alfresco\Model\ClientBody(); // \Alfresco\Model\ClientBody | The client name to send email with app-specific url.
 
 try {
     $api_instance->requestPasswordReset($person_id, $client_body);
@@ -309,7 +309,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **client_body** | [**\Alfresco\Core\Model\ClientBody**](../Model/ClientBody.md)| The client name to send email with app-specific url. |
+ **client_body** | [**\Alfresco\Model\ClientBody**](../Model/ClientBody.md)| The client name to send email with app-specific url. |
 
 ### Return type
 
@@ -339,12 +339,12 @@ Reset password
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$password_reset_body = new \Alfresco\Core\Model\PasswordResetBody(); // \Alfresco\Core\Model\PasswordResetBody | The reset password details
+$password_reset_body = new \Alfresco\Model\PasswordResetBody(); // \Alfresco\Model\PasswordResetBody | The reset password details
 
 try {
     $api_instance->resetPassword($person_id, $password_reset_body);
@@ -359,7 +359,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **password_reset_body** | [**\Alfresco\Core\Model\PasswordResetBody**](../Model/PasswordResetBody.md)| The reset password details |
+ **password_reset_body** | [**\Alfresco\Model\PasswordResetBody**](../Model/PasswordResetBody.md)| The reset password details |
 
 ### Return type
 
@@ -389,10 +389,10 @@ Update avatar image
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $content_body_update = "B"; // string | The binary content
 
@@ -427,7 +427,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePerson**
-> \Alfresco\Core\Model\PersonEntry updatePerson($person_id, $person_body_update, $fields)
+> \Alfresco\Model\PersonEntry updatePerson($person_id, $person_body_update, $fields)
 
 Update person
 
@@ -439,12 +439,12 @@ Update person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\PeopleApi();
+$api_instance = new Alfresco\Api\PeopleApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$person_body_update = new \Alfresco\Core\Model\PersonBodyUpdate(); // \Alfresco\Core\Model\PersonBodyUpdate | The person details.
+$person_body_update = new \Alfresco\Model\PersonBodyUpdate(); // \Alfresco\Model\PersonBodyUpdate | The person details.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -461,12 +461,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **person_body_update** | [**\Alfresco\Core\Model\PersonBodyUpdate**](../Model/PersonBodyUpdate.md)| The person details. |
+ **person_body_update** | [**\Alfresco\Model\PersonBodyUpdate**](../Model/PersonBodyUpdate.md)| The person details. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\PersonEntry**](../Model/PersonEntry.md)
+[**\Alfresco\Model\PersonEntry**](../Model/PersonEntry.md)
 
 ### Authorization
 

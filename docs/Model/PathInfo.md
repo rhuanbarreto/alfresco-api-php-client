@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Alfresco\Core\Model\PathElement[]**](PathElement.md) |  | [optional] 
+**elements** | [**\Alfresco\Model\PathElement[]**](PathElement.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **is_complete** | **bool** |  | [optional] 
 

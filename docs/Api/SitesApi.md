@@ -1,4 +1,4 @@
-# Alfresco\Core\SitesApi
+# Alfresco\SitesApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **createSite**
-> \Alfresco\Core\Model\SiteEntry createSite($site_body_create, $skip_configuration, $skip_add_to_favorites, $fields)
+> \Alfresco\Model\SiteEntry createSite($site_body_create, $skip_configuration, $skip_add_to_favorites, $fields)
 
 Create a site
 
@@ -39,11 +39,11 @@ Create a site
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
-$site_body_create = new \Alfresco\Core\Model\SiteBodyCreate(); // \Alfresco\Core\Model\SiteBodyCreate | The site details
+$api_instance = new Alfresco\Api\SitesApi();
+$site_body_create = new \Alfresco\Model\SiteBodyCreate(); // \Alfresco\Model\SiteBodyCreate | The site details
 $skip_configuration = false; // bool | Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created.
 $skip_add_to_favorites = false; // bool | Flag to indicate whether the site should not be added to the user's site favorites.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -61,14 +61,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **site_body_create** | [**\Alfresco\Core\Model\SiteBodyCreate**](../Model/SiteBodyCreate.md)| The site details |
+ **site_body_create** | [**\Alfresco\Model\SiteBodyCreate**](../Model/SiteBodyCreate.md)| The site details |
  **skip_configuration** | **bool**| Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created. | [optional] [default to false]
  **skip_add_to_favorites** | **bool**| Flag to indicate whether the site should not be added to the user&#39;s site favorites. | [optional] [default to false]
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteEntry**](../Model/SiteEntry.md)
+[**\Alfresco\Model\SiteEntry**](../Model/SiteEntry.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSiteMembership**
-> \Alfresco\Core\Model\SiteMemberEntry createSiteMembership($site_id, $site_membership_body_create, $fields)
+> \Alfresco\Model\SiteMemberEntry createSiteMembership($site_id, $site_membership_body_create, $fields)
 
 Create a site membership
 
@@ -94,12 +94,12 @@ Creates a site membership for person **personId** on site **siteId**.  You can s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
-$site_membership_body_create = new \Alfresco\Core\Model\SiteMembershipBodyCreate(); // \Alfresco\Core\Model\SiteMembershipBodyCreate | The person to add and their role
+$site_membership_body_create = new \Alfresco\Model\SiteMembershipBodyCreate(); // \Alfresco\Model\SiteMembershipBodyCreate | The person to add and their role
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -116,12 +116,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **site_id** | **string**| The identifier of a site. |
- **site_membership_body_create** | [**\Alfresco\Core\Model\SiteMembershipBodyCreate**](../Model/SiteMembershipBodyCreate.md)| The person to add and their role |
+ **site_membership_body_create** | [**\Alfresco\Model\SiteMembershipBodyCreate**](../Model/SiteMembershipBodyCreate.md)| The person to add and their role |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
+[**\Alfresco\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSiteMembershipRequestForPerson**
-> \Alfresco\Core\Model\SiteMembershipRequestEntry createSiteMembershipRequestForPerson($person_id, $site_membership_request_body_create, $fields)
+> \Alfresco\Model\SiteMembershipRequestEntry createSiteMembershipRequestForPerson($person_id, $site_membership_request_body_create, $fields)
 
 Create a site membership request
 
@@ -147,12 +147,12 @@ Create a site membership request for yourself on the site with the identifier of
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
-$site_membership_request_body_create = new \Alfresco\Core\Model\SiteMembershipRequestBodyCreate(); // \Alfresco\Core\Model\SiteMembershipRequestBodyCreate | Site membership request details
+$site_membership_request_body_create = new \Alfresco\Model\SiteMembershipRequestBodyCreate(); // \Alfresco\Model\SiteMembershipRequestBodyCreate | Site membership request details
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -169,12 +169,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
- **site_membership_request_body_create** | [**\Alfresco\Core\Model\SiteMembershipRequestBodyCreate**](../Model/SiteMembershipRequestBodyCreate.md)| Site membership request details |
+ **site_membership_request_body_create** | [**\Alfresco\Model\SiteMembershipRequestBodyCreate**](../Model/SiteMembershipRequestBodyCreate.md)| Site membership request details |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
+[**\Alfresco\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
 
 ### Authorization
 
@@ -200,10 +200,10 @@ Delete a site
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $permanent = false; // bool | Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan.
 
@@ -250,10 +250,10 @@ Deletes person **personId** as a member of site **siteId**.  You can use the `-m
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $person_id = "person_id_example"; // string | The identifier of a person.
 
@@ -300,10 +300,10 @@ Deletes person **personId** as a member of site **siteId**.  You can use the `-m
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 
@@ -350,10 +350,10 @@ Deletes the site membership request to site **siteId** for person **personId**. 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 
@@ -388,7 +388,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSite**
-> \Alfresco\Core\Model\SiteEntry getSite($site_id, $relations, $fields)
+> \Alfresco\Model\SiteEntry getSite($site_id, $relations, $fields)
 
 Get a site
 
@@ -400,10 +400,10 @@ Gets information for site **siteId**.  You can use the **relations** parameter t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $relations = array("relations_example"); // string[] | Use the relations parameter to include one or more related entities in a single response.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteEntry**](../Model/SiteEntry.md)
+[**\Alfresco\Model\SiteEntry**](../Model/SiteEntry.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSiteContainer**
-> \Alfresco\Core\Model\SiteContainerEntry getSiteContainer($site_id, $container_id, $fields)
+> \Alfresco\Model\SiteContainerEntry getSiteContainer($site_id, $container_id, $fields)
 
 Get a site container
 
@@ -453,10 +453,10 @@ Gets information on the container **containerId** in site **siteId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $container_id = "container_id_example"; // string | The unique identifier of a site container.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteContainerEntry**](../Model/SiteContainerEntry.md)
+[**\Alfresco\Model\SiteContainerEntry**](../Model/SiteContainerEntry.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSiteMembership**
-> \Alfresco\Core\Model\SiteMemberEntry getSiteMembership($site_id, $person_id, $fields)
+> \Alfresco\Model\SiteMemberEntry getSiteMembership($site_id, $person_id, $fields)
 
 Get a site membership
 
@@ -506,10 +506,10 @@ Gets site membership information for person **personId** on site **siteId**.  Yo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $person_id = "person_id_example"; // string | The identifier of a person.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
+[**\Alfresco\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
 
 ### Authorization
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSiteMembershipForPerson**
-> \Alfresco\Core\Model\SiteRoleEntry getSiteMembershipForPerson($person_id, $site_id)
+> \Alfresco\Model\SiteRoleEntry getSiteMembershipForPerson($person_id, $site_id)
 
 Get a site membership
 
@@ -559,10 +559,10 @@ Gets site membership information for person **personId** on site **siteId**.  Yo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteRoleEntry**](../Model/SiteRoleEntry.md)
+[**\Alfresco\Model\SiteRoleEntry**](../Model/SiteRoleEntry.md)
 
 ### Authorization
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSiteMembershipRequestForPerson**
-> \Alfresco\Core\Model\SiteMembershipRequestEntry getSiteMembershipRequestForPerson($person_id, $site_id, $fields)
+> \Alfresco\Model\SiteMembershipRequestEntry getSiteMembershipRequestForPerson($person_id, $site_id, $fields)
 
 Get a site membership request
 
@@ -610,10 +610,10 @@ Gets the site membership request for site **siteId** for person **personId**, if
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
+[**\Alfresco\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
 
 ### Authorization
 
@@ -651,7 +651,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSiteContainers**
-> \Alfresco\Core\Model\SiteContainerPaging listSiteContainers($site_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\SiteContainerPaging listSiteContainers($site_id, $skip_count, $max_items, $fields)
 
 List site containers
 
@@ -663,10 +663,10 @@ Gets a list of containers for the site **siteId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteContainerPaging**](../Model/SiteContainerPaging.md)
+[**\Alfresco\Model\SiteContainerPaging**](../Model/SiteContainerPaging.md)
 
 ### Authorization
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSiteMembershipRequestsForPerson**
-> \Alfresco\Core\Model\SiteMembershipRequestPaging listSiteMembershipRequestsForPerson($person_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\SiteMembershipRequestPaging listSiteMembershipRequestsForPerson($person_id, $skip_count, $max_items, $fields)
 
 List site membership requests
 
@@ -718,10 +718,10 @@ Gets a list of the current site membership requests for person **personId**.  Yo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMembershipRequestPaging**](../Model/SiteMembershipRequestPaging.md)
+[**\Alfresco\Model\SiteMembershipRequestPaging**](../Model/SiteMembershipRequestPaging.md)
 
 ### Authorization
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSiteMemberships**
-> \Alfresco\Core\Model\SiteMemberPaging listSiteMemberships($site_id, $skip_count, $max_items, $fields)
+> \Alfresco\Model\SiteMemberPaging listSiteMemberships($site_id, $skip_count, $max_items, $fields)
 
 List site memberships
 
@@ -773,10 +773,10 @@ Gets a list of site memberships for site **siteId**.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMemberPaging**](../Model/SiteMemberPaging.md)
+[**\Alfresco\Model\SiteMemberPaging**](../Model/SiteMemberPaging.md)
 
 ### Authorization
 
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSiteMembershipsForPerson**
-> \Alfresco\Core\Model\SiteRolePaging listSiteMembershipsForPerson($person_id, $skip_count, $max_items, $order_by, $relations, $fields, $where)
+> \Alfresco\Model\SiteRolePaging listSiteMembershipsForPerson($person_id, $skip_count, $max_items, $order_by, $relations, $fields, $where)
 
 List site memberships
 
@@ -828,10 +828,10 @@ Gets a list of site membership information for person **personId**.  You can use
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteRolePaging**](../Model/SiteRolePaging.md)
+[**\Alfresco\Model\SiteRolePaging**](../Model/SiteRolePaging.md)
 
 ### Authorization
 
@@ -877,7 +877,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSites**
-> \Alfresco\Core\Model\SitePaging listSites($skip_count, $max_items, $order_by, $relations, $fields, $where)
+> \Alfresco\Model\SitePaging listSites($skip_count, $max_items, $order_by, $relations, $fields, $where)
 
 List sites
 
@@ -889,10 +889,10 @@ Gets a list of sites in this repository.  You can use the **where** parameter to
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $skip_count = 0; // int | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.
 $max_items = 100; // int | The maximum number of items to return in the list.  If not supplied then the default value is 100.
 $order_by = array("order_by_example"); // string[] | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\SitePaging**](../Model/SitePaging.md)
+[**\Alfresco\Model\SitePaging**](../Model/SitePaging.md)
 
 ### Authorization
 
@@ -936,7 +936,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSite**
-> \Alfresco\Core\Model\SiteEntry updateSite($site_id, $site_body_update, $fields)
+> \Alfresco\Model\SiteEntry updateSite($site_id, $site_body_update, $fields)
 
 Update a site
 
@@ -948,12 +948,12 @@ Update a site
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
-$site_body_update = new \Alfresco\Core\Model\SiteBodyUpdate(); // \Alfresco\Core\Model\SiteBodyUpdate | The site information to update.
+$site_body_update = new \Alfresco\Model\SiteBodyUpdate(); // \Alfresco\Model\SiteBodyUpdate | The site information to update.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -970,12 +970,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **site_id** | **string**| The identifier of a site. |
- **site_body_update** | [**\Alfresco\Core\Model\SiteBodyUpdate**](../Model/SiteBodyUpdate.md)| The site information to update. |
+ **site_body_update** | [**\Alfresco\Model\SiteBodyUpdate**](../Model/SiteBodyUpdate.md)| The site information to update. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteEntry**](../Model/SiteEntry.md)
+[**\Alfresco\Model\SiteEntry**](../Model/SiteEntry.md)
 
 ### Authorization
 
@@ -989,7 +989,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSiteMembership**
-> \Alfresco\Core\Model\SiteMemberEntry updateSiteMembership($site_id, $person_id, $site_membership_body_update, $fields)
+> \Alfresco\Model\SiteMemberEntry updateSiteMembership($site_id, $person_id, $site_membership_body_update, $fields)
 
 Update a site membership
 
@@ -1001,13 +1001,13 @@ Update the membership of person **personId** in site **siteId**.  You can use th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $site_id = "site_id_example"; // string | The identifier of a site.
 $person_id = "person_id_example"; // string | The identifier of a person.
-$site_membership_body_update = new \Alfresco\Core\Model\SiteMembershipBodyUpdate(); // \Alfresco\Core\Model\SiteMembershipBodyUpdate | The persons new role
+$site_membership_body_update = new \Alfresco\Model\SiteMembershipBodyUpdate(); // \Alfresco\Model\SiteMembershipBodyUpdate | The persons new role
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -1025,12 +1025,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **site_id** | **string**| The identifier of a site. |
  **person_id** | **string**| The identifier of a person. |
- **site_membership_body_update** | [**\Alfresco\Core\Model\SiteMembershipBodyUpdate**](../Model/SiteMembershipBodyUpdate.md)| The persons new role |
+ **site_membership_body_update** | [**\Alfresco\Model\SiteMembershipBodyUpdate**](../Model/SiteMembershipBodyUpdate.md)| The persons new role |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
+[**\Alfresco\Model\SiteMemberEntry**](../Model/SiteMemberEntry.md)
 
 ### Authorization
 
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSiteMembershipRequestForPerson**
-> \Alfresco\Core\Model\SiteMembershipRequestEntry updateSiteMembershipRequestForPerson($person_id, $site_id, $site_membership_request_body_update, $fields)
+> \Alfresco\Model\SiteMembershipRequestEntry updateSiteMembershipRequestForPerson($person_id, $site_id, $site_membership_request_body_update, $fields)
 
 Update a site membership request
 
@@ -1056,13 +1056,13 @@ Updates the message for the site membership request to site **siteId** for perso
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\SitesApi();
+$api_instance = new Alfresco\Api\SitesApi();
 $person_id = "person_id_example"; // string | The identifier of a person.
 $site_id = "site_id_example"; // string | The identifier of a site.
-$site_membership_request_body_update = new \Alfresco\Core\Model\SiteMembershipRequestBodyUpdate(); // \Alfresco\Core\Model\SiteMembershipRequestBodyUpdate | The new message to display
+$site_membership_request_body_update = new \Alfresco\Model\SiteMembershipRequestBodyUpdate(); // \Alfresco\Model\SiteMembershipRequestBodyUpdate | The new message to display
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -1080,12 +1080,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**| The identifier of a person. |
  **site_id** | **string**| The identifier of a site. |
- **site_membership_request_body_update** | [**\Alfresco\Core\Model\SiteMembershipRequestBodyUpdate**](../Model/SiteMembershipRequestBodyUpdate.md)| The new message to display |
+ **site_membership_request_body_update** | [**\Alfresco\Model\SiteMembershipRequestBodyUpdate**](../Model/SiteMembershipRequestBodyUpdate.md)| The new message to display |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
+[**\Alfresco\Model\SiteMembershipRequestEntry**](../Model/SiteMembershipRequestEntry.md)
 
 ### Authorization
 

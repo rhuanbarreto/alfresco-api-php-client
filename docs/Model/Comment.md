@@ -5,10 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **content** | **string** |  | 
-**created_by** | [**\Alfresco\Core\Model\Person**](Person.md) |  | 
+**created_by** | [**\Alfresco\Model\Person**](Person.md) |  | 
 **created_at** | [**\DateTime**](\DateTime.md) |  | 
 **edited** | **bool** |  | 
-**modified_by** | [**\Alfresco\Core\Model\Person**](Person.md) |  | 
+**modified_by** | [**\Alfresco\Model\Person**](Person.md) |  | 
 **modified_at** | [**\DateTime**](\DateTime.md) |  | 
 **can_edit** | **bool** |  | 
 **can_delete** | **bool** |  | 

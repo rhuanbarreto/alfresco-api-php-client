@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **aspect_names** | **string[]** |  | [optional] 
 **properties** | **map[string,string]** |  | [optional] 
 **relative_path** | **string** |  | [optional] 
-**association** | [**\Alfresco\Core\Model\NodeBodyCreateAssociation**](NodeBodyCreateAssociation.md) |  | [optional] 
-**secondary_children** | [**\Alfresco\Core\Model\ChildAssociationBody[]**](ChildAssociationBody.md) |  | [optional] 
-**targets** | [**\Alfresco\Core\Model\AssociationBody[]**](AssociationBody.md) |  | [optional] 
+**association** | [**\Alfresco\Model\NodeBodyCreateAssociation**](NodeBodyCreateAssociation.md) |  | [optional] 
+**secondary_children** | [**\Alfresco\Model\ChildAssociationBody[]**](ChildAssociationBody.md) |  | [optional] 
+**targets** | [**\Alfresco\Model\AssociationBody[]**](AssociationBody.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

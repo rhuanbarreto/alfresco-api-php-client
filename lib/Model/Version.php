@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Version Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -61,8 +61,8 @@ class Version implements ArrayAccess
         'is_folder' => 'bool',
         'is_file' => 'bool',
         'modified_at' => '\DateTime',
-        'modified_by_user' => '\Alfresco\Core\Model\UserInfo',
-        'content' => '\Alfresco\Core\Model\ContentInfo',
+        'modified_by_user' => '\Alfresco\Model\UserInfo',
+        'content' => '\Alfresco\Model\ContentInfo',
         'aspect_names' => 'string[]',
         'properties' => 'map[string,string]'
     ];
@@ -423,7 +423,7 @@ class Version implements ArrayAccess
 
     /**
      * Gets modified_by_user
-     * @return \Alfresco\Core\Model\UserInfo
+     * @return \Alfresco\Model\UserInfo
      */
     public function getModifiedByUser()
     {
@@ -432,7 +432,7 @@ class Version implements ArrayAccess
 
     /**
      * Sets modified_by_user
-     * @param \Alfresco\Core\Model\UserInfo $modified_by_user
+     * @param \Alfresco\Model\UserInfo $modified_by_user
      * @return $this
      */
     public function setModifiedByUser($modified_by_user)
@@ -444,7 +444,7 @@ class Version implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Alfresco\Core\Model\ContentInfo
+     * @return \Alfresco\Model\ContentInfo
      */
     public function getContent()
     {
@@ -453,7 +453,7 @@ class Version implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Alfresco\Core\Model\ContentInfo $content
+     * @param \Alfresco\Model\ContentInfo $content
      * @return $this
      */
     public function setContent($content)
@@ -556,10 +556,10 @@ class Version implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

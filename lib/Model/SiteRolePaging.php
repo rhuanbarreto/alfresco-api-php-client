@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SiteRolePaging Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class SiteRolePaging implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'list' => '\Alfresco\Core\Model\SiteRolePagingList'
+        'list' => '\Alfresco\Model\SiteRolePagingList'
     ];
 
     /**
@@ -162,7 +162,7 @@ class SiteRolePaging implements ArrayAccess
 
     /**
      * Gets list
-     * @return \Alfresco\Core\Model\SiteRolePagingList
+     * @return \Alfresco\Model\SiteRolePagingList
      */
     public function getList()
     {
@@ -171,7 +171,7 @@ class SiteRolePaging implements ArrayAccess
 
     /**
      * Sets list
-     * @param \Alfresco\Core\Model\SiteRolePagingList $list
+     * @param \Alfresco\Model\SiteRolePagingList $list
      * @return $this
      */
     public function setList($list)
@@ -232,10 +232,10 @@ class SiteRolePaging implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

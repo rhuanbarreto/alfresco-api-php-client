@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description A network is the group of users and sites that belong to an organization. Networks are organized by email domain. When a user signs up for an Alfresco account , their email domain becomes their Home Network.
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class PersonNetwork implements ArrayAccess
         'created_at' => '\DateTime',
         'paid_network' => 'bool',
         'subscription_level' => 'string',
-        'quotas' => '\Alfresco\Core\Model\NetworkQuota[]'
+        'quotas' => '\Alfresco\Model\NetworkQuota[]'
     ];
 
     /**
@@ -374,7 +374,7 @@ class PersonNetwork implements ArrayAccess
 
     /**
      * Gets quotas
-     * @return \Alfresco\Core\Model\NetworkQuota[]
+     * @return \Alfresco\Model\NetworkQuota[]
      */
     public function getQuotas()
     {
@@ -383,7 +383,7 @@ class PersonNetwork implements ArrayAccess
 
     /**
      * Sets quotas
-     * @param \Alfresco\Core\Model\NetworkQuota[] $quotas
+     * @param \Alfresco\Model\NetworkQuota[] $quotas
      * @return $this
      */
     public function setQuotas($quotas)
@@ -444,10 +444,10 @@ class PersonNetwork implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

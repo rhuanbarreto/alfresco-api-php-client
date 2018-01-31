@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * GroupsApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class GroupsApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class GroupsApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class GroupsApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return GroupsApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,11 +92,11 @@ class GroupsApi
      *
      * Create a group
      *
-     * @param \Alfresco\Core\Model\GroupBodyCreate $group_body_create The group to create. (required)
+     * @param \Alfresco\Model\GroupBodyCreate $group_body_create The group to create. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupEntry
      */
     public function createGroup($group_body_create, $include = null, $fields = null)
     {
@@ -109,11 +109,11 @@ class GroupsApi
      *
      * Create a group
      *
-     * @param \Alfresco\Core\Model\GroupBodyCreate $group_body_create The group to create. (required)
+     * @param \Alfresco\Model\GroupBodyCreate $group_body_create The group to create. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createGroupWithHttpInfo($group_body_create, $include = null, $fields = null)
     {
@@ -171,19 +171,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupEntry',
+                '\Alfresco\Model\GroupEntry',
                 '/groups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -198,10 +198,10 @@ class GroupsApi
      * Create a group membership
      *
      * @param string $group_id The identifier of a group. (required)
-     * @param \Alfresco\Core\Model\GroupMembershipBodyCreate $group_membership_body_create The group membership to add (person or sub-group). (required)
+     * @param \Alfresco\Model\GroupMembershipBodyCreate $group_membership_body_create The group membership to add (person or sub-group). (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupMemberEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupMemberEntry
      */
     public function createGroupMembership($group_id, $group_membership_body_create, $fields = null)
     {
@@ -215,10 +215,10 @@ class GroupsApi
      * Create a group membership
      *
      * @param string $group_id The identifier of a group. (required)
-     * @param \Alfresco\Core\Model\GroupMembershipBodyCreate $group_membership_body_create The group membership to add (person or sub-group). (required)
+     * @param \Alfresco\Model\GroupMembershipBodyCreate $group_membership_body_create The group membership to add (person or sub-group). (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupMemberEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupMemberEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createGroupMembershipWithHttpInfo($group_id, $group_membership_body_create, $fields = null)
     {
@@ -281,19 +281,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupMemberEntry',
+                '\Alfresco\Model\GroupMemberEntry',
                 '/groups/{groupId}/members'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupMemberEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupMemberEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupMemberEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupMemberEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -309,7 +309,7 @@ class GroupsApi
      *
      * @param string $group_id The identifier of a group. (required)
      * @param bool $cascade If **true** then the delete will be applied in cascade to sub-groups. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteGroup($group_id, $cascade = 'false')
@@ -325,7 +325,7 @@ class GroupsApi
      *
      * @param string $group_id The identifier of a group. (required)
      * @param bool $cascade If **true** then the delete will be applied in cascade to sub-groups. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteGroupWithHttpInfo($group_id, $cascade = 'false')
@@ -385,7 +385,7 @@ class GroupsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -401,7 +401,7 @@ class GroupsApi
      *
      * @param string $group_id The identifier of a group. (required)
      * @param string $group_member_id The identifier of a person or group. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteGroupMembership($group_id, $group_member_id)
@@ -417,7 +417,7 @@ class GroupsApi
      *
      * @param string $group_id The identifier of a group. (required)
      * @param string $group_member_id The identifier of a person or group. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteGroupMembershipWithHttpInfo($group_id, $group_member_id)
@@ -485,7 +485,7 @@ class GroupsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -502,8 +502,8 @@ class GroupsApi
      * @param string $group_id The identifier of a group. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupEntry
      */
     public function getGroup($group_id, $include = null, $fields = null)
     {
@@ -519,8 +519,8 @@ class GroupsApi
      * @param string $group_id The identifier of a group. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGroupWithHttpInfo($group_id, $include = null, $fields = null)
     {
@@ -581,19 +581,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupEntry',
+                '\Alfresco\Model\GroupEntry',
                 '/groups/{groupId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -613,8 +613,8 @@ class GroupsApi
      * @param string[] $order_by A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupMemberPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupMemberPaging
      */
     public function listGroupMemberships($group_id, $skip_count = '0', $max_items = '100', $order_by = null, $where = null, $fields = null)
     {
@@ -633,8 +633,8 @@ class GroupsApi
      * @param string[] $order_by A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupMemberPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupMemberPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listGroupMembershipsWithHttpInfo($group_id, $skip_count = '0', $max_items = '100', $order_by = null, $where = null, $fields = null)
     {
@@ -715,19 +715,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupMemberPaging',
+                '\Alfresco\Model\GroupMemberPaging',
                 '/groups/{groupId}/members'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupMemberPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupMemberPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupMemberPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupMemberPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -748,8 +748,8 @@ class GroupsApi
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupPaging
      */
     public function listGroupMembershipsForPerson($person_id, $skip_count = '0', $max_items = '100', $order_by = null, $include = null, $where = null, $fields = null)
     {
@@ -769,8 +769,8 @@ class GroupsApi
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listGroupMembershipsForPersonWithHttpInfo($person_id, $skip_count = '0', $max_items = '100', $order_by = null, $include = null, $where = null, $fields = null)
     {
@@ -858,19 +858,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupPaging',
+                '\Alfresco\Model\GroupPaging',
                 '/people/{personId}/groups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -890,8 +890,8 @@ class GroupsApi
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupPaging
      */
     public function listGroups($skip_count = '0', $max_items = '100', $order_by = null, $include = null, $where = null, $fields = null)
     {
@@ -910,8 +910,8 @@ class GroupsApi
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listGroupsWithHttpInfo($skip_count = '0', $max_items = '100', $order_by = null, $include = null, $where = null, $fields = null)
     {
@@ -987,19 +987,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupPaging',
+                '\Alfresco\Model\GroupPaging',
                 '/groups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1014,11 +1014,11 @@ class GroupsApi
      * Update group details
      *
      * @param string $group_id The identifier of a group. (required)
-     * @param \Alfresco\Core\Model\GroupBodyUpdate $group_body_update The group information to update. (required)
+     * @param \Alfresco\Model\GroupBodyUpdate $group_body_update The group information to update. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\GroupEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\GroupEntry
      */
     public function updateGroup($group_id, $group_body_update, $include = null, $fields = null)
     {
@@ -1032,11 +1032,11 @@ class GroupsApi
      * Update group details
      *
      * @param string $group_id The identifier of a group. (required)
-     * @param \Alfresco\Core\Model\GroupBodyUpdate $group_body_update The group information to update. (required)
+     * @param \Alfresco\Model\GroupBodyUpdate $group_body_update The group information to update. (required)
      * @param string[] $include Returns additional information about the group. The following optional fields can be requested: * parentIds * zones (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\GroupEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateGroupWithHttpInfo($group_id, $group_body_update, $include = null, $fields = null)
     {
@@ -1106,19 +1106,19 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\GroupEntry',
+                '\Alfresco\Model\GroupEntry',
                 '/groups/{groupId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\GroupEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\GroupEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\GroupEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

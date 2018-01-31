@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * SitesApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class SitesApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class SitesApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class SitesApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return SitesApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,12 +92,12 @@ class SitesApi
      *
      * Create a site
      *
-     * @param \Alfresco\Core\Model\SiteBodyCreate $site_body_create The site details (required)
+     * @param \Alfresco\Model\SiteBodyCreate $site_body_create The site details (required)
      * @param bool $skip_configuration Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created. (optional, default to false)
      * @param bool $skip_add_to_favorites Flag to indicate whether the site should not be added to the user&#39;s site favorites. (optional, default to false)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteEntry
      */
     public function createSite($site_body_create, $skip_configuration = 'false', $skip_add_to_favorites = 'false', $fields = null)
     {
@@ -110,12 +110,12 @@ class SitesApi
      *
      * Create a site
      *
-     * @param \Alfresco\Core\Model\SiteBodyCreate $site_body_create The site details (required)
+     * @param \Alfresco\Model\SiteBodyCreate $site_body_create The site details (required)
      * @param bool $skip_configuration Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created. (optional, default to false)
      * @param bool $skip_add_to_favorites Flag to indicate whether the site should not be added to the user&#39;s site favorites. (optional, default to false)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSiteWithHttpInfo($site_body_create, $skip_configuration = 'false', $skip_add_to_favorites = 'false', $fields = null)
     {
@@ -174,19 +174,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteEntry',
+                '\Alfresco\Model\SiteEntry',
                 '/sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -201,10 +201,10 @@ class SitesApi
      * Create a site membership
      *
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipBodyCreate $site_membership_body_create The person to add and their role (required)
+     * @param \Alfresco\Model\SiteMembershipBodyCreate $site_membership_body_create The person to add and their role (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMemberEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMemberEntry
      */
     public function createSiteMembership($site_id, $site_membership_body_create, $fields = null)
     {
@@ -218,10 +218,10 @@ class SitesApi
      * Create a site membership
      *
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipBodyCreate $site_membership_body_create The person to add and their role (required)
+     * @param \Alfresco\Model\SiteMembershipBodyCreate $site_membership_body_create The person to add and their role (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSiteMembershipWithHttpInfo($site_id, $site_membership_body_create, $fields = null)
     {
@@ -284,19 +284,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMemberEntry',
+                '\Alfresco\Model\SiteMemberEntry',
                 '/sites/{siteId}/members'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMemberEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMemberEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -311,10 +311,10 @@ class SitesApi
      * Create a site membership request
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipRequestBodyCreate $site_membership_request_body_create Site membership request details (required)
+     * @param \Alfresco\Model\SiteMembershipRequestBodyCreate $site_membership_request_body_create Site membership request details (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMembershipRequestEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMembershipRequestEntry
      */
     public function createSiteMembershipRequestForPerson($person_id, $site_membership_request_body_create, $fields = null)
     {
@@ -328,10 +328,10 @@ class SitesApi
      * Create a site membership request
      *
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipRequestBodyCreate $site_membership_request_body_create Site membership request details (required)
+     * @param \Alfresco\Model\SiteMembershipRequestBodyCreate $site_membership_request_body_create Site membership request details (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSiteMembershipRequestForPersonWithHttpInfo($person_id, $site_membership_request_body_create, $fields = null)
     {
@@ -394,19 +394,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMembershipRequestEntry',
+                '\Alfresco\Model\SiteMembershipRequestEntry',
                 '/people/{personId}/site-membership-requests'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -422,7 +422,7 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param bool $permanent Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSite($site_id, $permanent = 'false')
@@ -438,7 +438,7 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param bool $permanent Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan. (optional, default to false)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSiteWithHttpInfo($site_id, $permanent = 'false')
@@ -498,7 +498,7 @@ class SitesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -514,7 +514,7 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSiteMembership($site_id, $person_id)
@@ -530,7 +530,7 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSiteMembershipWithHttpInfo($site_id, $person_id)
@@ -598,7 +598,7 @@ class SitesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -614,7 +614,7 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSiteMembershipForPerson($person_id, $site_id)
@@ -630,7 +630,7 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSiteMembershipForPersonWithHttpInfo($person_id, $site_id)
@@ -698,7 +698,7 @@ class SitesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -714,7 +714,7 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSiteMembershipRequestForPerson($person_id, $site_id)
@@ -730,7 +730,7 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSiteMembershipRequestForPersonWithHttpInfo($person_id, $site_id)
@@ -798,7 +798,7 @@ class SitesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -815,8 +815,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteEntry
      */
     public function getSite($site_id, $relations = null, $fields = null)
     {
@@ -832,8 +832,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteWithHttpInfo($site_id, $relations = null, $fields = null)
     {
@@ -894,19 +894,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteEntry',
+                '\Alfresco\Model\SiteEntry',
                 '/sites/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -923,8 +923,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string $container_id The unique identifier of a site container. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteContainerEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteContainerEntry
      */
     public function getSiteContainer($site_id, $container_id, $fields = null)
     {
@@ -940,8 +940,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string $container_id The unique identifier of a site container. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteContainerEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteContainerEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteContainerWithHttpInfo($site_id, $container_id, $fields = null)
     {
@@ -1007,19 +1007,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteContainerEntry',
+                '\Alfresco\Model\SiteContainerEntry',
                 '/sites/{siteId}/containers/{containerId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteContainerEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteContainerEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteContainerEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteContainerEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1036,8 +1036,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMemberEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMemberEntry
      */
     public function getSiteMembership($site_id, $person_id, $fields = null)
     {
@@ -1053,8 +1053,8 @@ class SitesApi
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteMembershipWithHttpInfo($site_id, $person_id, $fields = null)
     {
@@ -1120,19 +1120,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMemberEntry',
+                '\Alfresco\Model\SiteMemberEntry',
                 '/sites/{siteId}/members/{personId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMemberEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMemberEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1148,8 +1148,8 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteRoleEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteRoleEntry
      */
     public function getSiteMembershipForPerson($person_id, $site_id)
     {
@@ -1164,8 +1164,8 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteRoleEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteRoleEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteMembershipForPersonWithHttpInfo($person_id, $site_id)
     {
@@ -1224,19 +1224,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteRoleEntry',
+                '\Alfresco\Model\SiteRoleEntry',
                 '/people/{personId}/sites/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteRoleEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteRoleEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteRoleEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteRoleEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1253,8 +1253,8 @@ class SitesApi
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMembershipRequestEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMembershipRequestEntry
      */
     public function getSiteMembershipRequestForPerson($person_id, $site_id, $fields = null)
     {
@@ -1270,8 +1270,8 @@ class SitesApi
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteMembershipRequestForPersonWithHttpInfo($person_id, $site_id, $fields = null)
     {
@@ -1337,19 +1337,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMembershipRequestEntry',
+                '\Alfresco\Model\SiteMembershipRequestEntry',
                 '/people/{personId}/site-membership-requests/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1367,8 +1367,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteContainerPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteContainerPaging
      */
     public function listSiteContainers($site_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1385,8 +1385,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteContainerPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteContainerPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSiteContainersWithHttpInfo($site_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1456,19 +1456,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteContainerPaging',
+                '\Alfresco\Model\SiteContainerPaging',
                 '/sites/{siteId}/containers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteContainerPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteContainerPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteContainerPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteContainerPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1486,8 +1486,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMembershipRequestPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMembershipRequestPaging
      */
     public function listSiteMembershipRequestsForPerson($person_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1504,8 +1504,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMembershipRequestPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMembershipRequestPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSiteMembershipRequestsForPersonWithHttpInfo($person_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1575,19 +1575,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMembershipRequestPaging',
+                '\Alfresco\Model\SiteMembershipRequestPaging',
                 '/people/{personId}/site-membership-requests'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMembershipRequestPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMembershipRequestPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMembershipRequestPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMembershipRequestPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1605,8 +1605,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMemberPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMemberPaging
      */
     public function listSiteMemberships($site_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1623,8 +1623,8 @@ class SitesApi
      * @param int $skip_count The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. (optional, default to 0)
      * @param int $max_items The maximum number of items to return in the list.  If not supplied then the default value is 100. (optional, default to 100)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMemberPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMemberPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSiteMembershipsWithHttpInfo($site_id, $skip_count = '0', $max_items = '100', $fields = null)
     {
@@ -1694,19 +1694,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMemberPaging',
+                '\Alfresco\Model\SiteMemberPaging',
                 '/sites/{siteId}/members'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMemberPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMemberPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMemberPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMemberPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1727,8 +1727,8 @@ class SitesApi
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteRolePaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteRolePaging
      */
     public function listSiteMembershipsForPerson($person_id, $skip_count = '0', $max_items = '100', $order_by = null, $relations = null, $fields = null, $where = null)
     {
@@ -1748,8 +1748,8 @@ class SitesApi
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteRolePaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteRolePaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSiteMembershipsForPersonWithHttpInfo($person_id, $skip_count = '0', $max_items = '100', $order_by = null, $relations = null, $fields = null, $where = null)
     {
@@ -1837,19 +1837,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteRolePaging',
+                '\Alfresco\Model\SiteRolePaging',
                 '/people/{personId}/sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteRolePaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteRolePaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteRolePaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteRolePaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1869,8 +1869,8 @@ class SitesApi
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SitePaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SitePaging
      */
     public function listSites($skip_count = '0', $max_items = '100', $order_by = null, $relations = null, $fields = null, $where = null)
     {
@@ -1889,8 +1889,8 @@ class SitesApi
      * @param string[] $relations Use the relations parameter to include one or more related entities in a single response. (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
      * @param string $where A string to restrict the returned objects by using a predicate. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SitePaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SitePaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSitesWithHttpInfo($skip_count = '0', $max_items = '100', $order_by = null, $relations = null, $fields = null, $where = null)
     {
@@ -1966,19 +1966,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SitePaging',
+                '\Alfresco\Model\SitePaging',
                 '/sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SitePaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SitePaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SitePaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SitePaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1993,10 +1993,10 @@ class SitesApi
      * Update a site
      *
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteBodyUpdate $site_body_update The site information to update. (required)
+     * @param \Alfresco\Model\SiteBodyUpdate $site_body_update The site information to update. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteEntry
      */
     public function updateSite($site_id, $site_body_update, $fields = null)
     {
@@ -2010,10 +2010,10 @@ class SitesApi
      * Update a site
      *
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteBodyUpdate $site_body_update The site information to update. (required)
+     * @param \Alfresco\Model\SiteBodyUpdate $site_body_update The site information to update. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSiteWithHttpInfo($site_id, $site_body_update, $fields = null)
     {
@@ -2076,19 +2076,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteEntry',
+                '\Alfresco\Model\SiteEntry',
                 '/sites/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2104,10 +2104,10 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipBodyUpdate $site_membership_body_update The persons new role (required)
+     * @param \Alfresco\Model\SiteMembershipBodyUpdate $site_membership_body_update The persons new role (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMemberEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMemberEntry
      */
     public function updateSiteMembership($site_id, $person_id, $site_membership_body_update, $fields = null)
     {
@@ -2122,10 +2122,10 @@ class SitesApi
      *
      * @param string $site_id The identifier of a site. (required)
      * @param string $person_id The identifier of a person. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipBodyUpdate $site_membership_body_update The persons new role (required)
+     * @param \Alfresco\Model\SiteMembershipBodyUpdate $site_membership_body_update The persons new role (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMemberEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSiteMembershipWithHttpInfo($site_id, $person_id, $site_membership_body_update, $fields = null)
     {
@@ -2200,19 +2200,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMemberEntry',
+                '\Alfresco\Model\SiteMemberEntry',
                 '/sites/{siteId}/members/{personId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMemberEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMemberEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMemberEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2228,10 +2228,10 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipRequestBodyUpdate $site_membership_request_body_update The new message to display (required)
+     * @param \Alfresco\Model\SiteMembershipRequestBodyUpdate $site_membership_request_body_update The new message to display (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SiteMembershipRequestEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SiteMembershipRequestEntry
      */
     public function updateSiteMembershipRequestForPerson($person_id, $site_id, $site_membership_request_body_update, $fields = null)
     {
@@ -2246,10 +2246,10 @@ class SitesApi
      *
      * @param string $person_id The identifier of a person. (required)
      * @param string $site_id The identifier of a site. (required)
-     * @param \Alfresco\Core\Model\SiteMembershipRequestBodyUpdate $site_membership_request_body_update The new message to display (required)
+     * @param \Alfresco\Model\SiteMembershipRequestBodyUpdate $site_membership_request_body_update The new message to display (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SiteMembershipRequestEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSiteMembershipRequestForPersonWithHttpInfo($person_id, $site_id, $site_membership_request_body_update, $fields = null)
     {
@@ -2324,19 +2324,19 @@ class SitesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SiteMembershipRequestEntry',
+                '\Alfresco\Model\SiteMembershipRequestEntry',
                 '/people/{personId}/site-membership-requests/{siteId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SiteMembershipRequestEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SiteMembershipRequestEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

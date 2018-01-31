@@ -1,4 +1,4 @@
-# Alfresco\Core\DownloadsApi
+# Alfresco\DownloadsApi
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
 
@@ -22,10 +22,10 @@ Cancel a download
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\DownloadsApi();
+$api_instance = new Alfresco\Api\DownloadsApi();
 $download_id = "download_id_example"; // string | The identifier of a download node.
 
 try {
@@ -58,7 +58,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createDownload**
-> \Alfresco\Core\Model\DownloadEntry createDownload($download_body_create, $fields)
+> \Alfresco\Model\DownloadEntry createDownload($download_body_create, $fields)
 
 Create a new download
 
@@ -70,11 +70,11 @@ Create a new download
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\DownloadsApi();
-$download_body_create = new \Alfresco\Core\Model\DownloadBodyCreate(); // \Alfresco\Core\Model\DownloadBodyCreate | The nodeIds the content of which will be zipped, which zip will be set as the content of our download node.
+$api_instance = new Alfresco\Api\DownloadsApi();
+$download_body_create = new \Alfresco\Model\DownloadBodyCreate(); // \Alfresco\Model\DownloadBodyCreate | The nodeIds the content of which will be zipped, which zip will be set as the content of our download node.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
 try {
@@ -90,12 +90,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **download_body_create** | [**\Alfresco\Core\Model\DownloadBodyCreate**](../Model/DownloadBodyCreate.md)| The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. |
+ **download_body_create** | [**\Alfresco\Model\DownloadBodyCreate**](../Model/DownloadBodyCreate.md)| The nodeIds the content of which will be zipped, which zip will be set as the content of our download node. |
  **fields** | [**string[]**](../Model/string.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. | [optional]
 
 ### Return type
 
-[**\Alfresco\Core\Model\DownloadEntry**](../Model/DownloadEntry.md)
+[**\Alfresco\Model\DownloadEntry**](../Model/DownloadEntry.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDownload**
-> \Alfresco\Core\Model\DownloadEntry getDownload($download_id, $fields)
+> \Alfresco\Model\DownloadEntry getDownload($download_id, $fields)
 
 Get a download
 
@@ -121,10 +121,10 @@ Get a download
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
-Alfresco\Core\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Alfresco\Core\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Alfresco\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Alfresco\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Alfresco\Core\Api\DownloadsApi();
+$api_instance = new Alfresco\Api\DownloadsApi();
 $download_id = "download_id_example"; // string | The identifier of a download node.
 $fields = array("fields_example"); // string[] | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Alfresco\Core\Model\DownloadEntry**](../Model/DownloadEntry.md)
+[**\Alfresco\Model\DownloadEntry**](../Model/DownloadEntry.md)
 
 ### Authorization
 

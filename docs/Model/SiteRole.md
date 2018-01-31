@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**site** | [**\Alfresco\Core\Model\Site**](Site.md) |  | 
+**site** | [**\Alfresco\Model\Site**](Site.md) |  | 
 **id** | **string** |  | 
 **guid** | **string** |  | 
 **role** | **string** |  | 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entry** | [**\Alfresco\Core\Model\ChildAssociation**](ChildAssociation.md) |  | 
+**entry** | [**\Alfresco\Model\ChildAssociation**](ChildAssociation.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

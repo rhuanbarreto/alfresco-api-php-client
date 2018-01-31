@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Comment Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class Comment implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'content' => 'string',
-        'created_by' => '\Alfresco\Core\Model\Person',
+        'created_by' => '\Alfresco\Model\Person',
         'created_at' => '\DateTime',
         'edited' => 'bool',
-        'modified_by' => '\Alfresco\Core\Model\Person',
+        'modified_by' => '\Alfresco\Model\Person',
         'modified_at' => '\DateTime',
         'can_edit' => 'bool',
         'can_delete' => 'bool'
@@ -306,7 +306,7 @@ class Comment implements ArrayAccess
 
     /**
      * Gets created_by
-     * @return \Alfresco\Core\Model\Person
+     * @return \Alfresco\Model\Person
      */
     public function getCreatedBy()
     {
@@ -315,7 +315,7 @@ class Comment implements ArrayAccess
 
     /**
      * Sets created_by
-     * @param \Alfresco\Core\Model\Person $created_by
+     * @param \Alfresco\Model\Person $created_by
      * @return $this
      */
     public function setCreatedBy($created_by)
@@ -369,7 +369,7 @@ class Comment implements ArrayAccess
 
     /**
      * Gets modified_by
-     * @return \Alfresco\Core\Model\Person
+     * @return \Alfresco\Model\Person
      */
     public function getModifiedBy()
     {
@@ -378,7 +378,7 @@ class Comment implements ArrayAccess
 
     /**
      * Sets modified_by
-     * @param \Alfresco\Core\Model\Person $modified_by
+     * @param \Alfresco\Model\Person $modified_by
      * @return $this
      */
     public function setModifiedBy($modified_by)
@@ -502,10 +502,10 @@ class Comment implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

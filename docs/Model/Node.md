@@ -10,17 +10,17 @@ Name | Type | Description | Notes
 **is_file** | **bool** |  | 
 **is_locked** | **bool** |  | [optional] [default to false]
 **modified_at** | [**\DateTime**](\DateTime.md) |  | 
-**modified_by_user** | [**\Alfresco\Core\Model\UserInfo**](UserInfo.md) |  | 
+**modified_by_user** | [**\Alfresco\Model\UserInfo**](UserInfo.md) |  | 
 **created_at** | [**\DateTime**](\DateTime.md) |  | 
-**created_by_user** | [**\Alfresco\Core\Model\UserInfo**](UserInfo.md) |  | 
+**created_by_user** | [**\Alfresco\Model\UserInfo**](UserInfo.md) |  | 
 **parent_id** | **string** |  | [optional] 
 **is_link** | **bool** |  | [optional] 
-**content** | [**\Alfresco\Core\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
+**content** | [**\Alfresco\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
 **aspect_names** | **string[]** |  | [optional] 
 **properties** | **object** |  | [optional] 
 **allowable_operations** | **string[]** |  | [optional] 
-**path** | [**\Alfresco\Core\Model\PathInfo**](PathInfo.md) |  | [optional] 
-**permissions** | [**\Alfresco\Core\Model\PermissionsInfo**](PermissionsInfo.md) |  | [optional] 
+**path** | [**\Alfresco\Model\PathInfo**](PathInfo.md) |  | [optional] 
+**permissions** | [**\Alfresco\Model\PermissionsInfo**](PermissionsInfo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

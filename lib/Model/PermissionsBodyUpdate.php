@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Model;
+namespace Alfresco\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * PermissionsBodyUpdate Class Doc Comment
  *
  * @category    Class
- * @package     Alfresco\Core
+ * @package     Alfresco
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class PermissionsBodyUpdate implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'is_inheritance_enabled' => 'bool',
-        'locally_set' => '\Alfresco\Core\Model\PermissionElement[]'
+        'locally_set' => '\Alfresco\Model\PermissionElement[]'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PermissionsBodyUpdate implements ArrayAccess
 
     /**
      * Gets locally_set
-     * @return \Alfresco\Core\Model\PermissionElement[]
+     * @return \Alfresco\Model\PermissionElement[]
      */
     public function getLocallySet()
     {
@@ -198,7 +198,7 @@ class PermissionsBodyUpdate implements ArrayAccess
 
     /**
      * Sets locally_set
-     * @param \Alfresco\Core\Model\PermissionElement[] $locally_set
+     * @param \Alfresco\Model\PermissionElement[] $locally_set
      * @return $this
      */
     public function setLocallySet($locally_set)
@@ -259,10 +259,10 @@ class PermissionsBodyUpdate implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Alfresco\Core\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Alfresco\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **is_folder** | **bool** |  | 
 **is_file** | **bool** |  | 
 **modified_at** | [**\DateTime**](\DateTime.md) |  | 
-**modified_by_user** | [**\Alfresco\Core\Model\UserInfo**](UserInfo.md) |  | 
-**content** | [**\Alfresco\Core\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
+**modified_by_user** | [**\Alfresco\Model\UserInfo**](UserInfo.md) |  | 
+**content** | [**\Alfresco\Model\ContentInfo**](ContentInfo.md) |  | [optional] 
 **aspect_names** | **string[]** |  | [optional] 
 **properties** | **map[string,string]** |  | [optional] 
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Alfresco\Core\Api;
+namespace Alfresco\Api;
 
-use \Alfresco\Core\ApiClient;
-use \Alfresco\Core\ApiException;
-use \Alfresco\Core\Configuration;
-use \Alfresco\Core\ObjectSerializer;
+use \Alfresco\ApiClient;
+use \Alfresco\ApiException;
+use \Alfresco\Configuration;
+use \Alfresco\ObjectSerializer;
 
 /**
  * SharedlinksApi Class Doc Comment
  *
  * @category Class
- * @package  Alfresco\Core
+ * @package  Alfresco
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class SharedlinksApi
     /**
      * API Client
      *
-     * @var \Alfresco\Core\ApiClient instance of the ApiClient
+     * @var \Alfresco\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Alfresco\Core\ApiClient|null $apiClient The api client to use
+     * @param \Alfresco\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Alfresco\Core\ApiClient $apiClient = null)
+    public function __construct(\Alfresco\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class SharedlinksApi
     /**
      * Get API client
      *
-     * @return \Alfresco\Core\ApiClient get the API client
+     * @return \Alfresco\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class SharedlinksApi
     /**
      * Set the API client
      *
-     * @param \Alfresco\Core\ApiClient $apiClient set the API client
+     * @param \Alfresco\ApiClient $apiClient set the API client
      *
      * @return SharedlinksApi
      */
-    public function setApiClient(\Alfresco\Core\ApiClient $apiClient)
+    public function setApiClient(\Alfresco\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,11 +92,11 @@ class SharedlinksApi
      *
      * Create a shared link to a file
      *
-     * @param \Alfresco\Core\Model\SharedLinkBodyCreate $shared_link_body_create The nodeId to create a shared link for. (required)
+     * @param \Alfresco\Model\SharedLinkBodyCreate $shared_link_body_create The nodeId to create a shared link for. (required)
      * @param string[] $include Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SharedLinkEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SharedLinkEntry
      */
     public function createSharedLink($shared_link_body_create, $include = null, $fields = null)
     {
@@ -109,11 +109,11 @@ class SharedlinksApi
      *
      * Create a shared link to a file
      *
-     * @param \Alfresco\Core\Model\SharedLinkBodyCreate $shared_link_body_create The nodeId to create a shared link for. (required)
+     * @param \Alfresco\Model\SharedLinkBodyCreate $shared_link_body_create The nodeId to create a shared link for. (required)
      * @param string[] $include Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SharedLinkEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SharedLinkEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSharedLinkWithHttpInfo($shared_link_body_create, $include = null, $fields = null)
     {
@@ -171,19 +171,19 @@ class SharedlinksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SharedLinkEntry',
+                '\Alfresco\Model\SharedLinkEntry',
                 '/shared-links'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SharedLinkEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SharedLinkEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SharedLinkEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SharedLinkEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -198,7 +198,7 @@ class SharedlinksApi
      * Deletes a shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function deleteSharedLink($shared_id)
@@ -213,7 +213,7 @@ class SharedlinksApi
      * Deletes a shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSharedLinkWithHttpInfo($shared_id)
@@ -269,7 +269,7 @@ class SharedlinksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -284,8 +284,8 @@ class SharedlinksApi
      * Email shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @param \Alfresco\Core\Model\SharedLinkBodyEmail $shared_link_body_email The shared link email to send. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\SharedLinkBodyEmail $shared_link_body_email The shared link email to send. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function emailSharedLink($shared_id, $shared_link_body_email)
@@ -300,8 +300,8 @@ class SharedlinksApi
      * Email shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @param \Alfresco\Core\Model\SharedLinkBodyEmail $shared_link_body_email The shared link email to send. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @param \Alfresco\Model\SharedLinkBodyEmail $shared_link_body_email The shared link email to send. (required)
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function emailSharedLinkWithHttpInfo($shared_id, $shared_link_body_email)
@@ -366,7 +366,7 @@ class SharedlinksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -382,8 +382,8 @@ class SharedlinksApi
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SharedLinkEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SharedLinkEntry
      */
     public function getSharedLink($shared_id, $fields = null)
     {
@@ -398,8 +398,8 @@ class SharedlinksApi
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SharedLinkEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SharedLinkEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSharedLinkWithHttpInfo($shared_id, $fields = null)
     {
@@ -453,19 +453,19 @@ class SharedlinksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SharedLinkEntry',
+                '\Alfresco\Model\SharedLinkEntry',
                 '/shared-links/{sharedId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SharedLinkEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SharedLinkEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SharedLinkEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SharedLinkEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -482,7 +482,7 @@ class SharedlinksApi
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function getSharedLinkContent($shared_id, $attachment = 'true', $if_modified_since = null)
@@ -499,7 +499,7 @@ class SharedlinksApi
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSharedLinkContentWithHttpInfo($shared_id, $attachment = 'true', $if_modified_since = null)
@@ -563,7 +563,7 @@ class SharedlinksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -579,8 +579,8 @@ class SharedlinksApi
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\RenditionEntry
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\RenditionEntry
      */
     public function getSharedLinkRendition($shared_id, $rendition_id)
     {
@@ -595,8 +595,8 @@ class SharedlinksApi
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\RenditionEntry, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\RenditionEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSharedLinkRenditionWithHttpInfo($shared_id, $rendition_id)
     {
@@ -655,19 +655,19 @@ class SharedlinksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\RenditionEntry',
+                '\Alfresco\Model\RenditionEntry',
                 '/shared-links/{sharedId}/renditions/{renditionId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\RenditionEntry', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\RenditionEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\RenditionEntry', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\RenditionEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -685,7 +685,7 @@ class SharedlinksApi
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return void
      */
     public function getSharedLinkRenditionContent($shared_id, $rendition_id, $attachment = 'true', $if_modified_since = null)
@@ -703,7 +703,7 @@ class SharedlinksApi
      * @param string $rendition_id The name of a thumbnail rendition, for example *doclib*, or *pdf*. (required)
      * @param bool $attachment **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. (optional, default to true)
      * @param \DateTime $if_modified_since Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, &#x60;Wed, 09 Mar 2016 16:56:34 GMT&#x60;. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
+     * @throws \Alfresco\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSharedLinkRenditionContentWithHttpInfo($shared_id, $rendition_id, $attachment = 'true', $if_modified_since = null)
@@ -779,7 +779,7 @@ class SharedlinksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -794,8 +794,8 @@ class SharedlinksApi
      * List renditions for a shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\RenditionPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\RenditionPaging
      */
     public function listSharedLinkRenditions($shared_id)
     {
@@ -809,8 +809,8 @@ class SharedlinksApi
      * List renditions for a shared link
      *
      * @param string $shared_id The identifier of a shared link to a file. (required)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\RenditionPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\RenditionPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSharedLinkRenditionsWithHttpInfo($shared_id)
     {
@@ -857,19 +857,19 @@ class SharedlinksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\RenditionPaging',
+                '\Alfresco\Model\RenditionPaging',
                 '/shared-links/{sharedId}/renditions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\RenditionPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\RenditionPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\RenditionPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\RenditionPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -888,8 +888,8 @@ class SharedlinksApi
      * @param string $where Optionally filter the list by \&quot;sharedByUser\&quot; userid of person who shared the link (can also use -me-)  *   &#x60;&#x60;&#x60;where&#x3D;(sharedByUser&#x3D;&#39;jbloggs&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(sharedByUser&#x3D;&#39;-me-&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return \Alfresco\Core\Model\SharedLinkPaging
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return \Alfresco\Model\SharedLinkPaging
      */
     public function listSharedLinks($skip_count = '0', $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -907,8 +907,8 @@ class SharedlinksApi
      * @param string $where Optionally filter the list by \&quot;sharedByUser\&quot; userid of person who shared the link (can also use -me-)  *   &#x60;&#x60;&#x60;where&#x3D;(sharedByUser&#x3D;&#39;jbloggs&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(sharedByUser&#x3D;&#39;-me-&#39;)&#x60;&#x60;&#x60; (optional)
      * @param string[] $include Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path (optional)
      * @param string[] $fields A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. (optional)
-     * @throws \Alfresco\Core\ApiException on non-2xx response
-     * @return array of \Alfresco\Core\Model\SharedLinkPaging, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Alfresco\ApiException on non-2xx response
+     * @return array of \Alfresco\Model\SharedLinkPaging, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSharedLinksWithHttpInfo($skip_count = '0', $max_items = '100', $where = null, $include = null, $fields = null)
     {
@@ -977,19 +977,19 @@ class SharedlinksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Alfresco\Core\Model\SharedLinkPaging',
+                '\Alfresco\Model\SharedLinkPaging',
                 '/shared-links'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Core\Model\SharedLinkPaging', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Alfresco\Model\SharedLinkPaging', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\SharedLinkPaging', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\SharedLinkPaging', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Core\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Alfresco\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
