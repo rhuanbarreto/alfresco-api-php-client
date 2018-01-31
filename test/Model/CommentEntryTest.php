@@ -6,14 +6,14 @@
  *
  * @category Class
  * @package  Alfresco
- * @author   Swagger Codegen team
+ * @author   Rhuan Barreto
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
  * Alfresco Content Services REST API
  *
- * **Core API**  Provides access to the core features of Alfresco Content Services.
+ * **API**  Provides access to the features of Alfresco Content Services.
  *
  * OpenAPI spec version: 1
  * 
